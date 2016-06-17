@@ -1,5 +1,43 @@
 
+body {
+    margin: 0;
+    padding: 0;
+}
+
 h2{
 	text-align: center;
+	color:white;
+}
+
+.main{
+	background-color:lightgray;
+	height:1000px;
+}
+
+//still useless
+.field {
+	background-color: black;
+}
+
+.container {
+	max-width:40%;
+	margin: auto;
+}
+
+.id_input{
+	background-color: transparent;
+	position: absolute;
+	top:10%;
+	left:40%;
+	width:20%;
+}
+
+.password{
+	background-color: transparent;
+	
+	position: absolute;
+	top:50%;
+	left:40%;
+	width:20%;
 }
 

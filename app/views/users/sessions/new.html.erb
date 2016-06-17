@@ -1,23 +1,46 @@
-<head>
-  <link rel="stylesheet" type="text/css" href="sign_in.css">
-  <h2>Please Enter Your ID ...</h2>
-</head>
-
 <body>
-  <div class="container">
-      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <div class="field">
-          <%= f.email_field :email, autofocus: true %>
+  <link rel="stylesheet" type="text/css" href="sign_in.css">
+  <div class="main">
+    <div class="container">
+        <h2>Please Enter Your ID ...</h2>
+        <div class="keyboard">
+          <table>
+            <tr>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>5</td>
+              <td>6</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>8</td>
+              <td>9</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>0</td>
+              <td></td>
+            </tr>
+          </table>
         </div>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="field">
+            <%= f.text_field :id, autofocus: true, class:"id_input" %>
+          </div>
 
-        <div class="field">
-          <%= f.password_field :password, autocomplete: "off" %>
-        </div>
+          <div class="field">
+            <%= f.password_field :password, autocomplete: "off", class:"password" %>
+          </div>
 
-        <div class="actions">
-          <%= f.submit "Log in" %>
-        </div>
-      <% end %>
+          <div class="actions">
+            <%= f.submit "Log in"  %>
+          </div>
+        <% end %>
+    </div>
   </div>
   <!-- plus a log in failed description-->
 </body>

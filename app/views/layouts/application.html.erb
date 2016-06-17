@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html>
 	<head>
 	  <title>SNASA</title>
@@ -7,9 +7,6 @@
 	  <%= csrf_meta_tags %>
 	</head>
 	<body>
-		<% flash.each do |name , msg| %>
-			<%= content_tag(:div, msg, class: "alert alert-#{name}") %>
-		<% end %>
 		<%= yield %>
 		<div class="footer">
 		<% if user_signed_in? %>
@@ -17,6 +14,9 @@
 				<li><%= link_to 'Account' , edit_user_registration_path %></li>
 				<li><%= link_to 'Sign out' , destroy_user_session_path , :method => :delete %></li>
 			</ul>
+		<% end %>
+		<% flash.each do |name , msg| %>
+			<%= content_tag(:div, msg, class: "alert alert-#{name}") %>
 		<% end %>
 		</div>
 	</body>
