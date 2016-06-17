@@ -2,6 +2,9 @@ Snasa::Application.routes.draw do
   
   devise_for :users, controllers: { sessions: 'users/sessions' }
 
+  get 'selfprofile' => "profile#selfprofile"
+
+  resource :profile
   root to: "home#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

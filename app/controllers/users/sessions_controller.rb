@@ -8,7 +8,11 @@ class Users::SessionsController < Devise::SessionsController
 
   # POST /resource/sign_in
     def create
-      super
+      self.resource = warden.authenticate!(auth_options)
+      #set_flash_message!(:notice, :signed_in)
+      sign_in(resource_name, resource)
+      yield resource if block_given?
+      respond_with resource, location: selfprofile_path
     end
 
   # DELETE /resource/sign_out
