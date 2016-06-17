@@ -1,0 +1,13 @@
+
+.signup_main{
+	background-color:#eee;
+	text-align: center;
+}
+
+.signup_main h1{
+	font-size: 60px;
+}
+
+.signup_main .container{
+	margin:auto;
+}

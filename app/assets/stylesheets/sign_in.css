@@ -1,43 +1,51 @@
-
-body {
-    margin: 0;
-    padding: 0;
+.signin_main{
+	margin:0px;
+	padding:0px;
+	width:100%;
+	background-color: black;
+	text-align: center;
+}
+.signin_main .container{
+	margin:auto;
 }
 
-h2{
+.signin_main .id_input{
+	background-color: transparent;
+	width:20%;
+}
+
+.signin_main table{
+	margin:auto;
+	text-align: center;
+}
+
+.signin_main .password{
+	background-color: transparent;
+	width:20%;
+}
+
+.dot{
+	background-color: rgba(100%, 100%, 100%, 0.8);
+	border-radius: 100%;
+	height:15px;
+	width:15px;
+	margin:auto;
+}
+
+.key{
+	height:50px;
+	width:50px;
+	margin: 10px;
+	border:1px solid rgba(95%, 95%, 95%, 0.4);
+	background-color: rgba(90%, 90%, 90%, 0.1);
+	border-radius: 100%;
 	text-align: center;
 	color:white;
 }
 
-.main{
-	background-color:lightgray;
-	height:1000px;
-}
-
-//still useless
-.field {
-	background-color: black;
-}
-
-.container {
-	max-width:40%;
-	margin: auto;
-}
-
-.id_input{
-	background-color: transparent;
-	position: absolute;
-	top:10%;
-	left:40%;
-	width:20%;
-}
-
-.password{
-	background-color: transparent;
-	
-	position: absolute;
-	top:50%;
-	left:40%;
-	width:20%;
+.line{
+	height:50px;
+	width:50px;
+	margin: 10px;
 }
 
