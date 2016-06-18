@@ -1,17 +1,12 @@
 .signin_main{
 	margin:0px;
 	padding:0px;
-	width:100%;
-	background-color: black;
+	height:800px;
+	background-color: #000;
 	text-align: center;
 }
 .signin_main .container{
 	margin:auto;
-}
-
-.signin_main .id_input{
-	background-color: transparent;
-	width:20%;
 }
 
 .signin_main table{
@@ -19,9 +14,20 @@
 	text-align: center;
 }
 
+.signin_main #table1{
+	height:30px;
+	margin-top: 20px;
+}
+
 .signin_main .password{
 	background-color: transparent;
-	width:20%;
+	width:100px;
+	height:20px;
+	border:2px solid rgba(100%, 100%, 100%, 0.8);
+	border-radius: 10px;
+	margin-top: 40px;
+	color:white;
+	text-align: center;
 }
 
 .dot{
@@ -41,11 +47,30 @@
 	border-radius: 100%;
 	text-align: center;
 	color:white;
+	font-size: 15px;
 }
 
 .line{
 	height:50px;
 	width:50px;
 	margin: 10px;
+}
+
+#login{
+	height:50px;
+	width:50px;
+	margin-top: 20px;
+	border:1px solid rgba(95%, 95%, 95%, 0.8);
+	background-color: rgba(90%, 90%, 90%, 0.1);
+	border-radius: 100%;
+	text-align: center;
+	color:white;
+	font-size: 20px;
+	font-style: bold;
+}
+
+#login:hover{
+	color:rgba(0%, 95%, 0%, 0.8);
+	border:1.5px solid rgba(0%, 95%, 0%, 0.8);
 }
 

@@ -1,14 +1,14 @@
 <script type="text/javascript" src="sign_in.js"></script>
-<div class="signin_main">
+<link rel="stylesheet" type="text/css" href="sign_in.css" />
+  <div class="signin_main">
     <div class="container">
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-          <div class="field">
-            <%= f.text_field :id, autofocus: true, class:"id_input" %>
+          <div>
+            <%= f.text_field :id, id:"idInput"%>
           </div>
-          
           <div class="keyboard">
             <table>
-              <tr>
+              <tr id="table1"; >
                 <td><div class="dot"; id="first"; ></div></td>
                 <td><div class="dot"; id="second"; ></div></td>
                 <td><div class="dot"; id="third"; ></div></td>
@@ -19,34 +19,34 @@
               <tr>
               </tr>
               <tr>
-                <td><div class="key"; id="1"; ><p>1</p></div></td>
-                <td><div class="key"; id="2"; ><p>2</p></div></td>
-                <td><div class="key"; id="3"; ><p>3</p></div></td>
+                <td><input value= "1" style = "none" type="button" onclick="input(this);" class="key"/></td>
+                <td><input value= "2" style = "none" type="button" onclick="input(this);" class="key"/></td>
+                <td><input value= "3" style = "none" type="button" onclick="input(this);" class="key"/></td>
               </tr>
               <tr>
-                <td><div class="key"; id="4"; ><p>4</p></div></td>
-                <td><div class="key"; id="5"; ><p>5</p></div></td>
-                <td><div class="key"; id="6"; ><p>6</p></div></td>
+                <td><input value= "4" style = "none" type="button" onclick="input(this);" class="key"/></td>
+                <td><input value= "5" style = "none" type="button" onclick="input(this);" class="key"/></td>
+                <td><input value= "6" style = "none" type="button" onclick="input(this);" class="key"/></td>
               </tr>
               <tr>
-                <td><div class="key"; id="7"; ><p>7</p></div></td>
-                <td><div class="key"; id="8"; ><p>8</p></div></td>
-                <td><div class="key"; id="9"; ><p>9</p></div></td>
+                <td><input value= "7" style = "none" type="button" onclick="input(this);" class="key"/></td>
+                <td><input value= "8" style = "none" type="button" onclick="input(this);" class="key"/></td>
+                <td><input value= "9" style = "none" type="button" onclick="input(this);" class="key"/></td>
               </tr>
               <tr>
                 <td></td>
-                <td><div class="key"; id="0"; ><p>0</p></div></td>
+                <td><input value= "0" style = "none" type="button" onclick="input(this);" class="key"/></td>
                 <td></td>
               </tr>
             </table>
           </div>
 
           <div class="field">
-            <%= f.password_field :password, autocomplete: "off", class:"password" %>
+            <%= f.password_field :password , autocomplete: "off", class: "password", id: "pwInput" %>
           </div>
 
           <div class="actions">
-            <%= f.submit "Log in"  %>
+            <input value= "S" style = "none" type="submit" id="login"/>
           </div>
         <% end %>
     </div>
