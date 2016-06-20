@@ -1,33 +1,22 @@
 <div class="signup_main">
+  <div class ="container">
     <h1>Start Your SNASA Journey</h1>
 
-    <div class="container">
-      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= devise_error_messages! %>
 
-      <div class="field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true %>
-      </div>
+      <div><%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true , class: "signup_field" %></div>
 
-      <div class="field">
-        <%= f.label :password %>
-        <% if @validatable %>
-        <em>(<%= @minimum_password_length %> characters minimum)</em>
-        <% end %><br />
-        <%= f.password_field :password, autocomplete: "off" %>
-      </div>
+      <div><%= f.label :password %> <% if @validatable %><i>(<%= @minimum_password_length %> characters minimum)</i><% end %><br />
+        <%= f.password_field :password, autocomplete: "off" , class: "signup_field" %></div>
 
-      <div class="field">
-        <%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "off" %>
-      </div>
+      <div><%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "off" , class: "signup_field" %></div>
 
-      <div class="actions">
-        <%= f.submit "Sign up" %>
-      </div>
-      <% end %>
-    </div>
+      <div><%= f.submit "Join SNASA" ,id: "signup_btn"%></div>
+    <% end %>
+
+    <!--<%= render "devise/shared/links" %>  I close this due to personal requirement-->
   </div>
 </div>
-
