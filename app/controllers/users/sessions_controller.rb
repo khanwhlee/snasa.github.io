@@ -17,7 +17,7 @@ class Users::SessionsController < Devise::SessionsController
       #set_flash_message!(:notice, :signed_in)
       sign_in(resource_name, resource)
       yield resource if block_given?
-      respond_with resource, location: selfprofile_path
+      respond_with resource, location: agent_path_for(resource)
     end
 
   # DELETE /resource/sign_out

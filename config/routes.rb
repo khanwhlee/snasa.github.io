@@ -2,7 +2,7 @@ Snasa::Application.routes.draw do
   
   devise_for :users, controllers: { sessions: 'users/sessions' , registrations: 'users/registrations'}
 
-  get 'selfprofile' => "profile#selfprofile"
+  get 'agent' => "profile#show"
 
   resource :profile
   root to: "home#index"
