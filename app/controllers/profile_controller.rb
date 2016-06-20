@@ -1,13 +1,41 @@
 class ProfileController < ApplicationController
 	before_action :authenticate_user!
 
+	def index
+	end
+
 	def show
 		@userid = current_user.id
 		@username = current_user.username
+		@userimg = current_user.img
+		@usermission = current_user.mission
+		@userstory = current_user.story
 		@userip = current_user.current_sign_in_ip
 		@userlastip = current_user.last_sign_in_ip
 		@userlastsignint = current_user.last_sign_in_at
+
 	end
 
+	def edit
+		@user = current_user
+		@userid = current_user.id
+		@username = current_user.username
+		@userimg = current_user.img
+		@usermission = current_user.mission
+		@userstory = current_user.story
 
+	end
+
+	def update
+		@user = current_user
+		@user.update_attributes(user_params)
+
+		redirect_to root_path
+	end
+
+	protected
+
+	def user_params
+		params.require(:user).permit(:username, :profilephoto, :mission, :story)
+  	end
 end

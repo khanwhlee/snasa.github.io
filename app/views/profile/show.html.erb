@@ -1,6 +1,28 @@
-<h1>Welcome to SNASA , agent <%= @userid %></h1><br>
-<h1><%= @username %></h1><br>
-<h1><%= @userip %></h1><br>
-<h1><%= @userlastip %></h1><br>
-<h1><%= @userlastsignint %></h1><br>
+<div class="show_main">
+	<h1>Welcome to SNASA , 00<%= @userid %></h1>
+	<div class="container">
+		<img src=<% @userimg %> />
+	</div>
 
+	<div class= "container">
+		<div class="main">
+		<ul>
+			<li><h1><%= @username %></h1></li>
+			<li><h1>Current Mission : <%= @usermission %></h1></li>
+			<li><h1>Major Research Areas : <%= @userstory %></h1></li>
+		</ul>
+		</div>
+	</div>
+	<div class= "container">
+		<div class="supporter">
+			<h1>Current IP : <%= @userip %></h1><br>
+			<h1>Last IP : <%= @userlastip %></h1><br>
+			<h1>Last login time : <%= @userlastsignint %></h1><br>
+		</div>
+	</div>
+	<div class="footer">
+	<%= link_to 'Profile Setting' , edit_profile_path(current_user) , class: "nav" %>
+
+	<%= link_to 'Account Setting' , edit_user_registration_path  , class: "nav" %>
+	</div>
+</div>

@@ -1,0 +1,31 @@
+<div class="editprofile_main">
+  
+  <h1>Set Up My Amazing Achievements</h1>
+  
+  <div class ="container">
+    <%= form_for(resource, as: resource_name, :url => { :controller => "profile" , :action => "update", :id => @user }, html: { method: :put }) do |f| %>
+      <div class="field">
+        <%= f.label :username %><br />
+        <%= f.text_field :username, autofocus: true , class: "edit_field", :value => @username %>
+      </div>
+      <div class="field">
+        <%= f.label :profile_photo_src %><br />
+        <%= f.text_field :img, class: "edit_field" ,:value => @userimg %>
+      </div>
+      <div class="field">
+        <%= f.label :current_mission %><br />
+        <%= f.text_field :mission, class: "edit_field", :value => @usermission %>
+      </div>
+      <div class="field">
+        <%= f.label :my_major_eesearch_areas %><br />
+        <%= f.text_area :story, class: "edit_area" , :value => @userstory %>
+      </div>
+
+      <div class="actions">
+          <%= f.submit "Update" , id: "edit_btn"%>
+      </div>
+      <br>
+      <%= link_to "Back", :back , id: "back_btn"  %>
+    <% end %> 
+  </div>
+</div>

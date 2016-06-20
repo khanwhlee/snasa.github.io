@@ -8,8 +8,13 @@ class ApplicationController < ActionController::Base
 	end
 
 	def agent_path_for(resource)
-		agent_path
-	end
+    sign_in_url = agent_path
+    if request.referer == sign_in_url
+      super
+    else
+      stored_location_for(resource) || request.referer || root_path
+    end
+  end
 
 	
   
