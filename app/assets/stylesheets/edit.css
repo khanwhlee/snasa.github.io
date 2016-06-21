@@ -3,6 +3,7 @@
 	text-align: center;
 	font-size:25px;
 	word-spacing: 2px;
+	margin: -20px auto;
 }
 
 .edit_main .container{
@@ -13,7 +14,7 @@
 .edit_main h2{
 	font-size:60px;
 	border-bottom: 1px solid #bbb;
-	padding: 0px;
+	margin-bottom: 20px;
 }
 
 .edit_main h3{

@@ -1,23 +1,36 @@
 <div class="show_main">
-	<h1>Welcome to SNASA , 00<%= @userid %></h1>
-	<div class="container">
+	<nav class="showhead">
+		<table class="tablenav">
+			<tr>
+				<td style="width:27%;"><iframe src="http://free.timeanddate.com/clock/i590km8t/n136/fcfff/tct/pct/ftb/tt0/tw1/tm1/td2/ta1/tb4" frameborder="0" width="125" height="34" allowTransparency="true" id="clock"></iframe></td>
+				<td style="width:46%;"><h2 style="text-align:center;">SNASA 00<%= @userid %> Ground Control</h2></td>
+				<td style="width:27%;">
+					<ul class ="information">
+						<li>Current IP : <%= @userip %></li>
+						<li>Last IP : <%= @userlastip %></li>
+						<li>Last login time : <%= @userlastsignint %></li>
+					</ul>
+				</td>
+			</tr>
+		</table>
+	</nav>
+	<nav class="headblocker"></nav>
+	<!--<div class="container">
 		<img src=<% @userimg %> />
-	</div>
+	</div>-->
 
-	<div class= "container">
-		<div class="main">
-		<ul>
-			<li><h1><%= @username %></h1></li>
-			<li><h1>Current Mission : <%= @usermission %></h1></li>
-			<li><h1>Major Research Areas : <%= @userstory %></h1></li>
-		</ul>
+	<div class= "container1">
+		<div class="terminal">
+		
 		</div>
 	</div>
-	<div class= "container">
-		<div class="supporter">
-			<h1>Current IP : <%= @userip %></h1><br>
-			<h1>Last IP : <%= @userlastip %></h1><br>
-			<h1>Last login time : <%= @userlastsignint %></h1><br>
+	<div class= "container2">
+		<div class="main">
+		<ul>
+			<li><h2><%= @username %></h2></li>
+			<li><h2>Current Mission : <%= @usermission %></h2></li>
+			<li><h2>Major Research Areas : <br><%= @userstory %></h2></li>
+		</ul>
 		</div>
 	</div>
 	<div class="footer">

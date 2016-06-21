@@ -1,5 +1,5 @@
 .signin_main{
-	margin:0px;
+	margin:-40px -20px 0px -20px;
 	padding:0px;
 	height:800px;
 	background-color: #000;
@@ -16,7 +16,7 @@
 
 .signin_main #table1{
 	height:30px;
-	margin-top: 20px;
+	margin-top: 50px;
 }
 
 .signin_main .password{
