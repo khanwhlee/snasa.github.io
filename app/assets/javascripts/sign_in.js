@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
     $('.dot , .field, #login').hide();
     $('.key').fadeTo('fast', 0.5);
@@ -37,8 +36,3 @@ function input(e) {
         pwInput.value = pwInput.value + e.value;
     }
 }
-
-
-
-
-

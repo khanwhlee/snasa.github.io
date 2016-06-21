@@ -1,3 +1,4 @@
+<script type="text/javascript" src="assets/show.js"></script>
 <div class="show_main">
 	<nav class="showhead">
 		<table class="tablenav">
@@ -15,26 +16,29 @@
 		</table>
 	</nav>
 	<nav class="headblocker"></nav>
-	<!--<div class="container">
-		<img src=<% @userimg %> />
-	</div>-->
 
 	<div class= "container1">
+
 		<div class="terminal">
-		
+			<p> Welcome to ground control center 00<%= @userid %> : </p>
+			<div id="space"></div>
+			<p>SNASA:RDGC$ <input type="text", class= "input", id= "i1", autocomplete= "off", spellcheck="false"></input></p>
+			<p class= "output" id= "o2">test</p>
 		</div>
+		<br>
+		<h6 id="trademark">SNASA &reg;</h6>
 	</div>
 	<div class= "container2">
 		<div class="main">
 		<ul>
-			<li><h2><%= @username %></h2></li>
-			<li><h2>Current Mission : <%= @usermission %></h2></li>
-			<li><h2>Major Research Areas : <br><%= @userstory %></h2></li>
+			<li><h2 id="username"><%= @username %></h2></li>
+			<li><h2 id="currentmission"><%= @usermission %></h2></li>
+			<li><h2 id="description"><%= @userstory %></h2></li>
 		</ul>
 		</div>
 	</div>
 	<div class="footer">
-	<%= link_to 'Profile Setting' , edit_profile_path(current_user) , class: "nav" %>
+	<%= link_to 'Profile Setting' , edit_profile_path(current_user) , class: "nav" , id: "test"%>
 
 	<%= link_to 'Account Setting' , edit_user_registration_path  , class: "nav" %>
 	</div>

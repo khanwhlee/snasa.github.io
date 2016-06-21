@@ -11,9 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160620112809) do
+ActiveRecord::Schema.define(version: 20160621065144) do
 
   create_table "profiles", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "terminals", force: true do |t|
+    t.string   "terminalinput"
+    t.string   "terminaloutput"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

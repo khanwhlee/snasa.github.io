@@ -1,14 +1,80 @@
-$(document).ready(function(){
 
-	$(window).scroll(function(){
-		var scrollval = $(this).scrolltop();)};
-		var t = 1- (scrollval/50);
-		if(scrollval <50){
-			$('.showhead').css("background-color","red")
-		};
-		else{
-			$('.showhead').css("background-color","rgba(100%, 100%, 100%, 0)")
-		};
-	});
+
+
+$(document).ready(function(){
+	$("#o2").hide();
+	$(".footer").hide();
+	$(".terminal #i1").focus();
+    $(".terminal #i1").on('keydown', function(event) {
+        if(event.which === 13) {// Enter key pressed
+            var $this = $(this), 
+                val = $this.val();
+            $this.focus().val('');
+            if(val == "hello world"){
+            	add(val);
+            	setTimeout(function() {
+					add("what can I help you?");
+				}, 300);
+            }
+            else if(val == "whoami"){
+            	add(val);
+            	var username = document.getElementById('username').innerHTML;
+            	setTimeout(function() {
+					add(username);
+				}, 300);
+            }
+            else if(val == "gc current mission"){
+            	add(val);
+            	var usermission = document.getElementById('currentmission').innerHTML;
+            	setTimeout(function() {
+					add(usermission);
+				}, 300);
+            }
+            else if(val == "gc description"){
+            	add(val);
+            	var description = document.getElementById('description').innerHTML;
+            	setTimeout(function() {
+					add(description);
+				}, 300);
+            }
+            else if(val == "help"){
+            	add(val);
+            	var help = 
+            	setTimeout(function() {
+					add("hello world, whoami, gc current mission, gc description, help, clear, hide setting, show setting");
+				}, 300);
+            }
+            else if(val == "clear"){
+            	$("#space p").remove();
+            }
+            else if(val == "hide setting"){
+            	add(val);
+            	$(".footer").hide();
+            }
+            else if(val == "show setting"){
+            	add(val);
+            	$(".footer").show();
+            }
+            
+
+            /*else{
+
+            	var line = "Error: Command <"+val+"> not recognized...";
+            	setTimeout(function() {
+            		add(val);
+					add(line);
+				}, 300);
+            }*/
+
+        }
+    });
 });
 
+
+function add(text){
+	var line = "SNASA:RDCG$ " + text
+	var t = document.createElement('p')
+	t.textContent = line;
+	var space = document.getElementById("space");
+	space.appendChild(t);
+}
