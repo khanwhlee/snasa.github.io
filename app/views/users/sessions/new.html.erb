@@ -1,57 +1,98 @@
-<script type="text/javascript" src="sign_in.js"></script>
-<link rel="stylesheet" type="text/css" href="sign_in.css" />
-  <div class="signin_main">
-    <div class="container">
-        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-          <br>
-          <br>
-          <br>
-          <div>
-            <%= f.text_field :id, id:"idInput", value: "", type: "hidden"%>
-          </div>
-          <div class="keyboard">
-            <table>
-              <tr id="table1"; >
-                <td><div class="dot"; id="first"; ></div></td>
-                <td><div class="dot"; id="second"; ></div></td>
-                <td><div class="dot"; id="third"; ></div></td>
-              </tr>
-                <td><div class="line"></div></td>
-                <td><div class="line"></div></td>
-                <td><div class="line"></div></td>
-              <tr>
-              </tr>
-              <tr>
-                <td><input value= "1" style = "none" type="button" onclick="input(this);" class="key"/></td>
-                <td><input value= "2" style = "none" type="button" onclick="input(this);" class="key"/></td>
-                <td><input value= "3" style = "none" type="button" onclick="input(this);" class="key"/></td>
-              </tr>
-              <tr>
-                <td><input value= "4" style = "none" type="button" onclick="input(this);" class="key"/></td>
-                <td><input value= "5" style = "none" type="button" onclick="input(this);" class="key"/></td>
-                <td><input value= "6" style = "none" type="button" onclick="input(this);" class="key"/></td>
-              </tr>
-              <tr>
-                <td><input value= "7" style = "none" type="button" onclick="input(this);" class="key"/></td>
-                <td><input value= "8" style = "none" type="button" onclick="input(this);" class="key"/></td>
-                <td><input value= "9" style = "none" type="button" onclick="input(this);" class="key"/></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td><input value= "0" style = "none" type="button" onclick="input(this);" class="key"/></td>
-                <td></td>
-              </tr>
-            </table>
-          </div>
+<script>
 
-          <div class="field">
-            <%= f.password_field :password , autocomplete: "off", class: "password", id: "pwInput" %>
-          </div>
+$(document).ready(function(){
+    $('.dot , .field, #login').hide();
+    $('.key').fadeTo('fast', 0.5);
 
-          <div class="actions">
-            <input value= "S" style = "none" type="submit" id="login"/>
-          </div>
-        <% end %>
-    </div>
+    $('.key').mouseenter(function() {
+        $(this).fadeTo('fast', 1);
+    });
+    $('.key').mouseleave(function() {
+        $(this).fadeTo('fast', 0.5);
+    });
+
+    $('.key').click(function() {
+        if ($('#first').is(":visible") && $('#second').is(":hidden")){
+            $('#second').fadeIn('fast');
+        }else if($('#first').is(":visible") && $('#second').is(":visible")){
+            $('#third').fadeIn('fast');
+        }else{
+            $('#first').fadeIn('fast');
+        }
+    });
+});
+
+function input(e) {
+    var idInput = document.getElementById("idInput");
+    var pwInput = document.getElementById("pwInput");
+    if(idInput.value.length < 2){     //要記得加value tbInput是取出表單
+        idInput.value = idInput.value + e.value;
+    }
+    else if(idInput.value.length ==2){
+        idInput.value = idInput.value + e.value;
+        if(idInput.value < 100){
+            $('.field , #login').fadeIn('slow');
+        }
+        //else 自動回到 502 bad
+    }
+    else if(idInput.value.length > 2){
+        pwInput.value = pwInput.value + e.value;
+    }
+}
+</script>
+
+<div class="signin_main">
+  <div class="container">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <br>
+      <br>
+      <br>
+      <div>
+        <%= f.text_field :id, id:"idInput", value: "", type: "hidden"%>
+      </div>
+      <div class="keyboard">
+        <table>
+          <tr id="table1"; >
+            <td><div class="dot"; id="first"; ></div></td>
+            <td><div class="dot"; id="second"; ></div></td>
+            <td><div class="dot"; id="third"; ></div></td>
+          </tr>
+            <td><div class="line"></div></td>
+            <td><div class="line"></div></td>
+            <td><div class="line"></div></td>
+          <tr>
+          </tr>
+          <tr>
+            <td><input value= "1" style = "none" type="button" onclick="input(this);" class="key"/></td>
+            <td><input value= "2" style = "none" type="button" onclick="input(this);" class="key"/></td>
+            <td><input value= "3" style = "none" type="button" onclick="input(this);" class="key"/></td>
+          </tr>
+          <tr>
+            <td><input value= "4" style = "none" type="button" onclick="input(this);" class="key"/></td>
+            <td><input value= "5" style = "none" type="button" onclick="input(this);" class="key"/></td>
+            <td><input value= "6" style = "none" type="button" onclick="input(this);" class="key"/></td>
+          </tr>
+          <tr>
+            <td><input value= "7" style = "none" type="button" onclick="input(this);" class="key"/></td>
+            <td><input value= "8" style = "none" type="button" onclick="input(this);" class="key"/></td>
+            <td><input value= "9" style = "none" type="button" onclick="input(this);" class="key"/></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><input value= "0" style = "none" type="button" onclick="input(this);" class="key"/></td>
+            <td></td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="field">
+        <%= f.password_field :password , autocomplete: "off", class: "password", id: "pwInput" %>
+      </div>
+
+      <div class="actions">
+        <input value= "S" style = "none" type="submit" id="login"/>
+      </div>
+    <% end %>
+  </div>
 </div>
   <!-- plus a log in failed description-->
