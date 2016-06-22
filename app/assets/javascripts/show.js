@@ -30,7 +30,7 @@ $(document).ready(function(){
 					add(usermission);
 				}, 300);
             }
-            else if(val == "gc description"){
+            else if(val == "gc schedule"){
             	add(val);
             	var description = document.getElementById('description').innerHTML;
             	setTimeout(function() {

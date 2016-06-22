@@ -1,23 +1,69 @@
-
+<script type="text/javascript" src="sign_up.js"></script>
 <div class="signup_main">
   <div class ="container">
-    <h1>Start Your SNASA Journey</h1>
+    <div class ="about">
+      <h1>Start Your SNASA Journey</h1>
+      <p>
+        Sick of those lonely nights?<br>
+        Sick of getting ditched at bar?<br>
+        <br>
+        Congratulation! You need this website for landing...<br>
+        If you are a fan of Barney then go ahead and sign up for an account directly.<br>
+        If you aren't, then the video below is gonna tell you why I made this website.<br>
+      </p>
+      <iframe width="420" height="315"
+        src="http://www.youtube.com/embed/NBDA21Vc-5Y">
+      </iframe>
+    </div>
+  </div>
+  <div class ="container">
+    <div class ="instruction" style = "background:black">
+      <h1 style ="color :white; border-bottom: 2px solid white; padding-top:25px;">Follow the Instruction of Landing</h1>
+      <img id="instructionimg" src="http://i.imgur.com/yFNZGUS.jpg?1" />
+      <div class ="instructionflow">
+        <img class="instructionsimg" src="http://i.imgur.com/yFNZGUS.jpg?1" id="1" />
+        <img class="instructionsimg" src="http://i.imgur.com/8m6uiZl.jpg?1" id="2" />
+        <img class="instructionsimg" src="http://i.imgur.com/ZD6GYCi.jpg?1" id="3" />
+        <img class="instructionsimg" src="http://i.imgur.com/ZcTUnMd.jpg?1" id="4" />
+        <img class="instructionsimg" src="http://i.imgur.com/GWun4wP.jpg?1" id="5" />
+        <img class="instructionsimg" src="http://i.imgur.com/LMofTYo.jpg?1" id="6" />
+        <img class="instructionsimg" src="http://i.imgur.com/58YoGFM.jpg?1" id="7" />
+        <img class="instructionsimg" src="http://i.imgur.com/NmASZ2V.jpg?1" id="8" />
+      </div>
+    </div>
+  </div>
+  <div class ="container">
+      <h1>Be an astronaut right now</h1>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= devise_error_messages! %>
 
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= devise_error_messages! %>
+          <div><%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true , class: "signup_field" %></div>
 
-      <div><%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true , class: "signup_field" %></div>
+          <div><%= f.label :password %> <% if @validatable %><i>(<%= @minimum_password_length %> characters minimum)</i><% end %><br />
+            <%= f.password_field :password, autocomplete: "off" , class: "signup_field" %></div>
 
-      <div><%= f.label :password %> <% if @validatable %><i>(<%= @minimum_password_length %> characters minimum)</i><% end %><br />
-        <%= f.password_field :password, autocomplete: "off" , class: "signup_field" %></div>
+          <div><%= f.label :password_confirmation %><br />
+            <%= f.password_field :password_confirmation, autocomplete: "off" , class: "signup_field" %></div>
 
-      <div><%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "off" , class: "signup_field" %></div>
-
-      <div><%= f.submit "Join SNASA" ,id: "signup_btn"%></div>
-    <% end %>
-
+          <div><%= f.submit "Join SNASA" ,id: "signup_btn"%></div>
+        <% end %>
     <!--<%= render "devise/shared/links" %>  I close this due to personal requirement-->
+  </div>
+  <div class="container">
+    <div class="foot">
+      <table style="width: 100%;">
+        <tr>
+          <td style="font-size:20px; text-align:left; padding-left:15px;">SNASA &reg;</td>
+          <td style="">
+            <ul class ="information" style ="list-style:none; font-size:20px;">
+              <li>connect me:</li>
+              <li>khan.whlee@gmail.com</li>
+            </ul>
+          </td>
+          <td style="text-align:right; font-size:15px; padding-right:15px;">愛心。服務。<br>責任。紀律。</td>
+        </tr>
+      </table>
+    </div>
   </div>
 </div>

@@ -6,6 +6,8 @@
 
 .signup_main h1{
 	font-size: 60px;
+	border-bottom: 2px solid #ddd;
+	height:100px
 }
 
 .signup_main .container{
@@ -13,6 +15,35 @@
 	font-size:30px;
 	font-style: bold;
 }
+
+/*instruction block*/
+
+.signup_main .instructionflow{
+	width:80%;
+	margin:auto;
+	overflow: scroll;
+	overflow-x: auto;
+	overflow-y: hidden;
+	white-space:nowrap;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.signup_main #instructionimg{
+	border: 2px solid white;
+	border-radius: 10px;
+	padding: 10px;
+}
+
+.signup_main .instructionsimg{
+	display: inline-block;
+	border: 2px solid white;
+	border-radius: 3px;
+	padding: 3px;
+	height:120px;
+}
+
+/*signup block*/
 
 .signup_main .signup_field{
 	background-color: transparent;
@@ -24,6 +55,7 @@
 	color:black;
 	text-align: center;
 	font-size:30px;
+
 }
 
 #signup_btn{
@@ -41,5 +73,14 @@
 #signup_btn:hover{
 	background-color: black;
 	color:white;
+}
+
+/*footer*/
+
+.signup_main .foot{
+	margin-top: 70px;
+	color:white;
+	background-color: black;
+	height: 100px;
 }
 
