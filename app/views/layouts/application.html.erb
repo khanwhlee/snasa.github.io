@@ -9,17 +9,17 @@
 	<body>
 		<%= yield %>
 	</body>
-	<footer>
+	<!--<footer>
 		<div class="footer">
-		<!--<% if user_signed_in? %>
+		<% if user_signed_in? %>
 			<ul>
 				<li><%= link_to 'Account' , edit_user_registration_path %></li>
 				<li><%= link_to 'Sign out' , destroy_user_session_path , :method => :delete %></li>
 			</ul>
 		<% end %>  這邊先不用用惹 --> 
-		<% flash.each do |name , msg| %>
+		<!--<% flash.each do |name , msg| %>
 			<%= content_tag(:div, msg, class: "alert alert-#{name}") %>
 		<% end %>
 		</div>
-	</footer>
+	</footer>  這邊也先不用用惹 -->
 </html>

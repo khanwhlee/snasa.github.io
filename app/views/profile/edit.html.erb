@@ -6,19 +6,33 @@
     <%= form_for(resource, as: resource_name, :url => { :controller => "profile" , :action => "update", :id => @user }, html: { method: :put }) do |f| %>
       <div class="field">
         <%= f.label :username %><br />
-        <%= f.text_field :username, autofocus: true , class: "edit_field", :value => @username %>
+        <%= f.text_field :username, autofocus: true , class: "edit_field", :value => @username, spellcheck: "false" %>
       </div>
-      <div class="field">
+      <!--<div class="field">
         <%= f.label :profile_photo_src %><br />
-        <%= f.text_field :img, class: "edit_field" ,:value => @userimg %>
-      </div>
-      <div class="field">
+        <%= f.text_field :img, class: "edit_field" ,:value => @userimg, spellcheck: "false" %>
+      </div>尚未開啟此功能-->
+      <div class="field"> 
         <%= f.label :current_mission %><br />
-        <%= f.text_field :mission, class: "edit_field", :value => @usermission %>
+        <% if @usermission == "" %>
+          <%= f.text_field :mission, class: "edit_field", :value => "Juno - location : JUP", spellcheck: "false" %>
+        <% else %>
+          <%= f.text_field :mission, class: "edit_field", :value => @usermission, spellcheck: "false" %>
+        <% end %>
       </div>
       <div class="field">
         <%= f.label :my_major_research_areas %><br />
+        <% if @usermission == "" %>
+        <%= f.text_area :story, class: "edit_area" , :value => 
+          "Launch - August 5, 2011
+          Deep Space Maneuvers - August/September 2012
+          Earth flyby gravity assist - October 2013
+          Jupiter arrival - July 2016
+          Spacecraft will orbit Jupiter for 20 months (37 orbits)
+          End of mission (deorbit into Jupiter) - February 2018" %>
+        <% else %>
         <%= f.text_area :story, class: "edit_area" , :value => @userstory %>
+        <% end %>
       </div>
 
       <div class="actions">

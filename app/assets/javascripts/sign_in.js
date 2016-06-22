@@ -1,3 +1,4 @@
+
 $(document).ready(function(){
     $('.dot , .field, #login').hide();
     $('.key').fadeTo('fast', 0.5);
@@ -31,8 +32,11 @@ function input(e) {
         if(idInput.value < 100){
             $('.field , #login').fadeIn('slow');
         }
+        //else 自動回到 502 bad
     }
     else if(idInput.value.length > 2){
         pwInput.value = pwInput.value + e.value;
     }
 }
+
+

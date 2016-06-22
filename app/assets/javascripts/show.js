@@ -55,16 +55,14 @@ $(document).ready(function(){
             	add(val);
             	$(".footer").show();
             }
-            
-
             /*else{
-
+				add(val);
             	var line = "Error: Command <"+val+"> not recognized...";
             	setTimeout(function() {
             		add(val);
 					add(line);
 				}, 300);
-            }*/
+            } unknown bug*/
 
         }
     });

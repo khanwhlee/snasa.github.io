@@ -4,7 +4,7 @@
 		<table class="tablenav">
 			<tr>
 				<td style="width:27%;"><iframe src="http://free.timeanddate.com/clock/i590km8t/n136/fcfff/tct/pct/ftb/tt0/tw1/tm1/td2/ta1/tb4" frameborder="0" width="125" height="34" allowTransparency="true" id="clock"></iframe></td>
-				<td style="width:46%;"><h2 style="text-align:center;">SNASA 00<%= @userid %> Ground Control</h2></td>
+				<td style="width:46%;"><h2 style="text-align:center;">SNASA <%= @useridstr %> Ground Control</h2></td>
 				<td style="width:27%;">
 					<ul class ="information">
 						<li>Current IP : <%= @userip %></li>
@@ -20,7 +20,7 @@
 	<div class= "container1">
 
 		<div class="terminal">
-			<p> Welcome to ground control center 00<%= @userid %> : </p>
+			<p> Welcome to ground control center <%= @useridstr %> : </p>
 			<div id="space"></div>
 			<p>SNASA:RDGC$ <input type="text", class= "input", id= "i1", autocomplete= "off", spellcheck="false"></input></p>
 			<p class= "output" id= "o2">test</p>

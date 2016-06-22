@@ -6,6 +6,13 @@ class ProfileController < ApplicationController
 
 	def show
 		@userid = current_user.id
+		if @userid < 10 
+			@useridstr = "00" + @userid.to_s
+		elsif @userid < 100 && @userid >=10
+			@useridstr = "0" + @userid.to_s
+		else
+			@useridstr = @userid.to_s
+		end
 		@username = current_user.username
 		@userimg = current_user.img
 		@usermission = current_user.mission
@@ -31,6 +38,10 @@ class ProfileController < ApplicationController
 		@user.update_attributes(user_params)
 
 		redirect_to root_path
+	end
+
+	def terminal
+
 	end
 
 	protected

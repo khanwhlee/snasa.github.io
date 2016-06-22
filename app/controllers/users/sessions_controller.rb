@@ -3,6 +3,7 @@ class Users::SessionsController < Devise::SessionsController
   prepend_before_action :allow_params_authentication!, only: :create
   prepend_before_action :verify_signed_out_user, only: :destroy
 
+
   # GET /resource/sign_in
     def new
       self.resource = resource_class.new(sign_in_params)
@@ -18,6 +19,7 @@ class Users::SessionsController < Devise::SessionsController
       sign_in(resource_name, resource)
       yield resource if block_given?
       respond_with resource, location: agent_path_for(resource)
+      
     end
 
   # DELETE /resource/sign_out
@@ -32,6 +34,25 @@ class Users::SessionsController < Devise::SessionsController
   # You can put the params you want to permit in the empty array.
     def configure_sign_in_params
       devise_parameter_sanitizer.for(:sign_in) << :attribute
+    end
+
+    def sign_in_params
+      devise_parameter_sanitizer.sanitize(:sign_in)
+    end
+
+    def serialize_options(resource)
+      methods = resource_class.authentication_keys.dup
+      methods = methods.keys if methods.is_a?(Hash)
+      methods << :password if resource.respond_to?(:password)
+      { methods: methods, only: [:password] }
+    end
+
+    def auth_options
+      { scope: resource_name, recall: "#{controller_path}#new" }
+    end
+
+    def translation_scope
+      'devise.sessions'
     end
 
     private
