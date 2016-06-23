@@ -1,8 +1,5 @@
-
-
-
 $(document).ready(function(){
-	$("#o2").hide();
+	$("#o2").hide(); //test
 	$(".footer").hide();
 	$(".terminal #i1").focus();
     $(".terminal #i1").on('keydown', function(event) {

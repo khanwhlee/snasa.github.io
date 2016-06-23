@@ -30,9 +30,7 @@ function input(e) {
     }
     else if(idInput.value.length ==2){
         idInput.value = idInput.value + e.value;
-        if(idInput.value < 100){
-            $('.field , #login').fadeIn('slow');
-        }
+        $('.field , #login').fadeIn('slow');
         //else 自動回到 502 bad
     }
     else if(idInput.value.length > 2){

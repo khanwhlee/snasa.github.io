@@ -3,6 +3,7 @@ Snasa::Application.routes.draw do
   devise_for :users, controllers: { sessions: 'users/sessions' , registrations: 'users/registrations'}
 
   get 'agent' => "profile#show"
+  get 'users' => "profile#show"
 
   resources :profile
 
