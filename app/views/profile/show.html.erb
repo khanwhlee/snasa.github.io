@@ -16,19 +16,28 @@
 		</table>
 	</nav>
 	<nav class="headblocker"></nav>
-
-	<div class= "container1">
-		<div class="terminal" id="t">
-			<p> Welcome to ground control center <%= @useridstr %> : </p>
-			<div id="space"></div>
-			<p>SNASA:RDGC$ <input type="text", class= "input", id= "i1", autocomplete= "off", spellcheck="false"></input></p>
-			<br><br><br>
-
-			<p class= "output" id= "o2">test</p>
-		</div>
-		<br><br><br>
-		<h6 id="trademark">SNASA &reg;</h6>
-	</div>
+	<table class= "container1">
+		<tr><td></td><td><h2 style ="margin:0px">Secret NASA</h2></td></tr>
+		<tr>
+			<td style="width:70%;">
+				<div class="terminal" id="t">
+					<p> Welcome to ground control center <%= @useridstr %> : </p>
+					<div id="space"></div>
+					<p>SNASA:RDGC$ <input type="text" id= "i1" autocomplete= "off" spellcheck="false"></p>
+					<br><br><br>
+					<p id= "o2">test</p>
+				</div>
+			</td>
+			<td style="width:30%;">
+				<div id ="msgbox">
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><br><br><br><br><h6 id="trademark">SNASA &reg;</h6></td>
+		</tr>
+	</table>
 	<div class= "container2">
 		<div class="main">
 		<ul>
@@ -38,6 +47,29 @@
 		</ul>
 		</div>
 	</div>
+	<div class ="container3">
+	    <div class ="instruction" style = "background:black">
+	      <table>
+	        <tr>
+	          <td style="width:20%"><img id="laststep" src="http://i.imgur.com/FZfE6vQ.png?1"
+	            style="height:100px;cursor: pointer; cursor: hand;"></td>
+	          <td style="width:60%"><img id="instructionimg" src="http://i.imgur.com/yFNZGUS.jpg?1" /></td>
+	          <td style="width:20%"><img id="nextstep" src="http://i.imgur.com/Zz08Xfa.png?1"
+	            style="height:100px;cursor: pointer; cursor: hand;"></td>
+	        </tr>
+	      </table>
+	      <div class ="instructionflow" id ="flowarea">
+	        <img class="instructionsimg" src="http://i.imgur.com/yFNZGUS.jpg?1" id="1" />
+	        <img class="instructionsimg" src="http://i.imgur.com/8m6uiZl.jpg?1" id="2" />
+	        <img class="instructionsimg" src="http://i.imgur.com/ZD6GYCi.jpg?1" id="3" />
+	        <img class="instructionsimg" src="http://i.imgur.com/ZcTUnMd.jpg?1" id="4" />
+	        <img class="instructionsimg" src="http://i.imgur.com/GWun4wP.jpg?1" id="5" />
+	        <img class="instructionsimg" src="http://i.imgur.com/LMofTYo.jpg?1" id="6" />
+	        <img class="instructionsimg" src="http://i.imgur.com/58YoGFM.jpg?1" id="7" />
+	        <img class="instructionsimg" src="http://i.imgur.com/NmASZ2V.jpg?1" id="8" />
+	      </div>
+	    </div>
+  	</div>
 	<div class="footer">
 	<%= link_to 'Profile Setting' , edit_profile_path(current_user) , class: "nav" , id: "test"%>
 

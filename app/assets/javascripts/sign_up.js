@@ -12,7 +12,7 @@ $(document).ready(function(){
     		$(this).fadeTo('fast', 1);
     	}
     	else{
-    		$(this).fadeTo('fast', 0.7);
+    		$(this).fadeTo('fast', 0.5);
     	}
     });
     $('.instructionsimg, #laststep, #nextstep').mouseenter(function() {
@@ -42,7 +42,7 @@ $(document).ready(function(){
 //element.scrollIntoView(); 直接捲動網頁到element位置
 
 function setimg(i){
-	$('.instructionsimg').fadeTo('fast', 0.7);
+	$('.instructionsimg').fadeTo('fast', 0.5);
 	var img = document.getElementById("instructionimg");
 	var simg = document.getElementById(i.toString());
 	$(simg).fadeTo('fast', 1);

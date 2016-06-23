@@ -50,12 +50,11 @@
 	background-size: 100% auto;
     width: 100%;
     height: 800px;
+    padding: 0px 30px 10px 30px;
 }
 
 .terminal{
-	padding-top: 100px;
-	padding-left: 10px;
-	width: 80%;
+	width: 100%;
 	height: 500px;
 	overflow: scroll;
 }
@@ -65,14 +64,14 @@
 	border:none;
 	background-color: transparent;
 	color:inherit;
-	width:60%;
+	width:80%;
 	font-size: 15px;
 	font-weight: bold;
 	font-family: inherit;
 	line-height: inherit;
 }
 
-.terminal p{
+.show_main p{
 	font-size: 15px;
 	font-family: Times;
 	color: #02f902;
@@ -80,12 +79,23 @@
 
 }
 
+/*暫時不開啟*/
+#msgbox{
+	width: 100%;
+	height: 460px;
+	overflow: scroll;
+	border: 3px solid rgba(1%,98%,1%,0.5);
+	border-radius: 5px;
+	display:none;
+}
+
 #trademark {
 	font-size: 20px;
 	text-align: right;
-	padding-right: 30px;
 	margin: 0px;
 }
+
+/*personal information*/
 
 .show_main .container2{
 	background: white;
@@ -96,5 +106,39 @@
     color: black;
     display:none;
 }
+
+/*instruction block*/
+.show_main .instruction{
+	margin:auto;
+	text-align: center;
+}
+
+.show_main #instructionimg{
+	border: 5px solid white;
+	border-radius: 20px;
+	padding: 10px;
+	width:100%;
+}
+
+.show_main .instructionflow{
+	width:80%;
+	margin:auto;
+	padding:30px;
+	overflow: scroll;
+	overflow-x: auto;
+	overflow-y: hidden;
+	white-space:nowrap; /*this place all the slide view code*/
+}
+
+.show_main .instructionsimg{
+	display: inline-block;
+	border: 5px solid white;
+	border-radius: 5px;
+	padding: 3px;
+	height:120px;
+	cursor: pointer;
+	cursor: hand;
+}
+
 
 
