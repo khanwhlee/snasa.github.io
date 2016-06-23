@@ -29,6 +29,8 @@
 
 .signup_main .instructionflow{
 	width:80%;
+	margin:auto;
+	padding:30px;
 	overflow: scroll;
 	overflow-x: auto;
 	overflow-y: hidden;

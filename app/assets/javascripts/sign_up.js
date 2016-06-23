@@ -26,21 +26,20 @@ $(document).ready(function(){
 	$("#laststep").click(function(){
 		if (imgindex>1){
 			imgindex = imgindex - 1;
+			move(imgindex);
 			setimg(imgindex);
 		}
 	});
 	$("#nextstep").click(function(){
 		if (imgindex<8){
 			imgindex = imgindex + 1;
+			move(imgindex);
 			setimg(imgindex);
 		}
 	});
-
-	//$('#instructionimg').on('load', function () {
-	//	$('#instructionimg').fadeTo(300, 1);
-	//	});
 });
 
+//element.scrollIntoView(); 直接捲動網頁到element位置
 
 function setimg(i){
 	$('.instructionsimg').fadeTo('fast', 0.7);
@@ -49,3 +48,14 @@ function setimg(i){
 	$(simg).fadeTo('fast', 1);
 	img.src= simg.src;
 }
+
+function move(i){
+	var leftPos = document.getElementById(i.toString()).offsetLeft;
+    document.getElementById('flowarea').scrollLeft = leftPos-550;
+}
+
+
+
+
+
+

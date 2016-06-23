@@ -7,6 +7,7 @@ $(document).ready(function(){
             var $this = $(this), 
                 val = $this.val();
             $this.focus().val('');
+            scrollTo();
             if(val == "hello world"){
             	add(val);
             	setTimeout(function() {
@@ -67,9 +68,14 @@ $(document).ready(function(){
 
 
 function add(text){
-	var line = "SNASA:RDCG$ " + text
+	var line = "SNASA:RDGC$ " + text
 	var t = document.createElement('p')
 	t.textContent = line;
 	var space = document.getElementById("space");
 	space.appendChild(t);
+}
+//textbox 下面要加一點<br>才有空間往上滾
+function scrollTo(){
+    var topPos = document.getElementById('i1').offsetTop;
+    document.getElementById('t').scrollTop = topPos-350;
 }

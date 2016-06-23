@@ -1,6 +1,10 @@
 Snasa::Application.routes.draw do
   
   devise_for :users, controllers: { sessions: 'users/sessions' , registrations: 'users/registrations'}
+  devise_scope :user do
+  get "fyeo" => "users/sessions#new" , :as => :login_session
+  post "fyeo" => "users/sessions#create" , :as => :login_again_session
+  end
 
   get 'agent' => "profile#show"
   get 'users' => "profile#show"
