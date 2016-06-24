@@ -4,10 +4,12 @@ Snasa::Application.routes.draw do
   devise_scope :user do
   get "fyeo" => "users/sessions#new" , :as => :login_session
   post "fyeo" => "users/sessions#create" , :as => :login_again_session
+  get 'roadtoawesome' => "users/registrations#new"
   end
 
   get 'agent' => "profile#show"
   get 'users' => "profile#show"
+
 
   resources :profile
 

@@ -1,17 +1,16 @@
 
-var line1 = "Waiting for authorization.............................................".split("");
+var line1 = "Waiting for authorization from host 104.223.112.1......................".split("");
 var line2 = "Success!      ".split("");
 var line3 = "Loading spacecraft location.........................".split("");
 var line4 = "SiJak!   ".split("");
 
-
 $(document).ready(function(){
 	$("#o2").hide(); //test
-	$(".footer").hide();
-    $(".container3").hide();
+	$(".footer , .container3 , .container4").hide();
 	$(".terminal #i1").focus();
     $(".terminal #i1").on('keydown', function(event) {
         if(event.which === 13) {// Enter key pressed
+            var usertarget = document.getElementById('target').innerHTML;
             var $this = $(this), 
                 val = $this.val();
             $this.focus().val('');
@@ -33,29 +32,38 @@ $(document).ready(function(){
             	add(val);
             	var usermission = document.getElementById('currentmission').innerHTML;
             	setTimeout(function() {
-					add("current mission: "+usermission);
+					add("current mission: "+ usermission);
 				}, 300);
             }
             else if(val == "gc schedule"){
             	add(val);
-            	var description = document.getElementById('description').innerHTML;
-            	setTimeout(function() {
-					add(description);
-				}, 300);
+            	var schedule = document.getElementById('schedule').innerHTML;
+                var schedulearray = schedule.split("-");
+            	for(k=0 ; k<schedulearray.length;k++){
+                    add(schedulearray[k]);
+                }
             }
             else if(val == "gc location"){
                 add(val);
                 track();
                 //addtext(line1,200);
             }
-            else if(val == "i love you"){
+            else if(val == "gc i love you"){
                 add(val);
                 setTimeout(function() {
                     add("♡");
                 }, 300);
-            }else if(val == "yuni"){
+            }else if(val == "gc "+usertarget){
                 add(val);
                 heart();
+            }
+            else if(val == "show code"){
+                add(val);
+                $(".container4").show();
+            }
+            else if(val == "hide code"){
+                add(val);
+                $(".container4").hide();
             }
             else if(val == "show help"){
             	add(val);

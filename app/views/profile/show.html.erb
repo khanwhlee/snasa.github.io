@@ -43,7 +43,8 @@
 		<ul>
 			<li><h2 id="username"><%= @username %></h2></li>
 			<li><h2 id="currentmission"><%= @usermission %></h2></li>
-			<li><h2 id="description"><%= @userstory %></h2></li>
+			<li><h2 id="schedule"><%= @userstory %></h2></li>
+			<li><h2 id="target"><%= @usertarget %></h2></li>
 		</ul>
 		</div>
 	</div>
@@ -70,9 +71,21 @@
 	      </div>
 	    </div>
   	</div>
+  	<div class ="container4" style="background-color:white; width:90%; margin-left:30px;">
+  		<p style="color:black;">basic command : hello world<br><br>
+  								configured command : whoami, gc mission, gc schedule<br><br>
+  								system related command :<br>
+  								show setting, hide setting, show help,<br>
+  								hide help, show code, hide code, clear<br>
+  								perfect working command : gc location<br><br>
+  								desperate command :<br>
+  								gc i love you, gc "target name" (without quotation mark)</p>
+  	</div>
 	<div class="footer">
-	<%= link_to 'Profile Setting' , edit_profile_path(current_user) , class: "nav" , id: "test"%>
+	<%= link_to 'Profile Setting' , edit_profile_path(current_user) , class: "nav" %>
 
 	<%= link_to 'Account Setting' , edit_user_registration_path  , class: "nav" %>
+
+	<a href="http://khanwhlee.blogspot.tw/" class="nav">About Me</a>
 	</div>
 </div>

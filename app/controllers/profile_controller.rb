@@ -14,7 +14,7 @@ class ProfileController < ApplicationController
 			@useridstr = @userid.to_s
 		end
 		@username = current_user.username
-		@userimg = current_user.img
+		@usertarget = current_user.img
 		@usermission = current_user.mission
 		@userstory = current_user.story
 		@userip = current_user.current_sign_in_ip
@@ -27,7 +27,7 @@ class ProfileController < ApplicationController
 		@user = current_user
 		@userid = current_user.id
 		@username = current_user.username
-		@userimg = current_user.img
+		@usertarget = current_user.img
 		@usermission = current_user.mission
 		@userstory = current_user.story
 
@@ -47,6 +47,6 @@ class ProfileController < ApplicationController
 	protected
 
 	def user_params
-		params.require(:user).permit(:username, :profilephoto, :mission, :story)
+		params.require(:user).permit(:username, :profilephoto, :mission, :story, :img)
   	end
 end
