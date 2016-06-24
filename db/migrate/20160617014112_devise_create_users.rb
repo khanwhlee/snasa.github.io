@@ -32,10 +32,6 @@ class DeviseCreateUsers < ActiveRecord::Migration
 
       # personal profile
 
-      t.string :profilephoto
-      t.string :mission
-      t.text :story
-
       t.timestamps
     end
 
