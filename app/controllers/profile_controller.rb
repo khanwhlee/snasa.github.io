@@ -1,6 +1,7 @@
 class ProfileController < ApplicationController
 	before_action :authenticate_user!
 
+
 	def index
 	end
 
@@ -24,6 +25,7 @@ class ProfileController < ApplicationController
 	end
 
 	def edit
+		#@usermission
 		@user = current_user
 		@userid = current_user.id
 		@username = current_user.username
