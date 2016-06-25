@@ -2,6 +2,7 @@ var imgindex = 1;
 
 $(document).ready(function(){
 
+
 	$('.instructionsimg, #laststep, #nextstep').fadeTo('fast', 0.7);
 
 	$('#laststep, #nextstep').mouseleave(function() {
@@ -31,7 +32,9 @@ $(document).ready(function(){
 		}
 	});
 	$("#nextstep").click(function(){
-		if (imgindex<8){
+		var lc = document.getElementById("flowarea").lastElementChild.id; //要用lastElementChild
+		var max = parseInt(lc);
+		if (imgindex < max){
 			imgindex = imgindex + 1;
 			move(imgindex);
 			setimg(imgindex);

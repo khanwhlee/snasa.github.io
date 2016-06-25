@@ -108,6 +108,9 @@
 }
 
 /*instruction block*/
+.show_main .container2{
+    width: 100%;
+}
 .show_main .instruction{
 	margin:auto;
 	text-align: center;
@@ -116,8 +119,7 @@
 .show_main #instructionimg{
 	border: 5px solid white;
 	border-radius: 20px;
-	padding: 10px;
-	width:100%;
+	width:95%;
 }
 
 .show_main .instructionflow{

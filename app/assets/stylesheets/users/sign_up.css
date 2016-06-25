@@ -24,8 +24,7 @@
 .signup_main #instructionimg{
 	border: 5px solid white;
 	border-radius: 20px;
-	padding: 10px;
-	width:100%;
+	width:95%;
 }
 
 .signup_main .instructionflow{
