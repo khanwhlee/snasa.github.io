@@ -18,8 +18,8 @@
       </div>
       <div class="field">
         <%= f.label :mission_schedule %><br />
-        <% if @usermission == "" %>
-        <%= f.text_area :story, class: "edit_area" , :value => 
+        <% if @userschedule == "" %>
+        <%= f.text_area :schedule, class: "edit_area" , :value => 
           " Launch @ August 5, 2011
           - Deep Space Maneuvers @ August/September 2012
           - Earth flyby gravity assist @ October 2013
@@ -27,15 +27,15 @@
           - Spacecraft will orbit Jupiter for 20 months (37 orbits)
           - End of mission (deorbit into Jupiter) @ February 2018" %>
         <% else %>
-        <%= f.text_area :story, class: "edit_area" , :value => @userstory %>
+        <%= f.text_area :schedule, class: "edit_area" , :value => @userschedule %>
         <% end %>
       </div>
       <div class="field">
         <%= f.label :target_name %><br />
         <% if @usertarget == "" %>
-          <%= f.text_field :img, class: "edit_field" ,:value => "Enter your target's name", spellcheck: "false" %>
+          <%= f.text_field :target, class: "edit_field" ,:value => "Enter your target's name", spellcheck: "false" %>
         <% else %>
-          <%= f.text_field :img, class: "edit_field" ,:value => @usertarget, spellcheck: "false" %>
+          <%= f.text_field :target, class: "edit_field" ,:value => @usertarget, spellcheck: "false" %>
         <% end %>
       </div>
       <div class="actions">

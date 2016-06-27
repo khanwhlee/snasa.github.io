@@ -34,8 +34,9 @@ $(document).ready(function(){
 	$("#nextstep").click(function(){
 		var lc = document.getElementById("flowarea").lastElementChild.id; //要用lastElementChild
 		var max = parseInt(lc);
-		if (imgindex < max){
-			imgindex = imgindex + 1;
+		if (imgindex < 4){
+			imgindex = imgindex +1;
+			alert(imgindex);
 			move(imgindex);
 			setimg(imgindex);
 		}

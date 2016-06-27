@@ -4,6 +4,7 @@ var line2 = "Success!      ".split("");
 var line3 = "Loading spacecraft location.........................".split("");
 var line4 = "SiJak!   ".split("");
 
+
 $(document).ready(function(){
 	$("#o2").hide(); //test
 	$(".footer , .container3 , .container4").hide();
@@ -96,6 +97,7 @@ $(document).ready(function(){
         }
     });
 });
+
 var count = 0;
 function track(){
     var randomline = grdline();
@@ -193,7 +195,4 @@ var heart5 ="......◥▇▇▇▇▇▇▇▇▇▇▇▇◤".split("");
 var heart6 ="............◥▇▇▇▇▇▇▇▇▇◤".split("");
 var heart7 ="..................◥▇▇▇▇▇◤".split("");
 var heart8 ="........................◥▇▇◤".split("");
-
-
-
 
