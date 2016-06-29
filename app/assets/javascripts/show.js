@@ -182,10 +182,6 @@ function add(text){
 }
 
 //textbox 下面要加一點<br>才有空間往上滾
-function scrollTo(){
-    var topPos = document.getElementById('i1').offsetTop;
-    document.getElementById('t').scrollTop = topPos-350;
-}
 
 var heart1 ="............◢▇▇◣............◢▇▇◣".split("");
 var heart2 ="......◢▇▇▇▇▇◣◢▇▇▇▇▇◣".split("");

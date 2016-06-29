@@ -1,77 +1,168 @@
 <script type="text/javascript" src="assets/sign_up.js"></script>
+<script>
 
-<div class="signup_main">
-  <div class ="container">
-    <div class ="about">
-      <h1 id="topic">Start Your SNASA Journey</h1>
-      <p>
-        Sick of those lonely nights?<br>
-        Sick of getting ditched at bar?<br>
-        <br>
-        Congratulation! This website is all you need for landing...<br>
-        If you are a fan of Barney then go ahead and sign up for an account directly.<br>
-        If you aren't, then the video below is gonna tell you why I made this website.<br>
-      </p>
-      <iframe width="420" height="315"
-        src="http://www.youtube.com/embed/NBDA21Vc-5Y">
-      </iframe>
+var ad1 = "Sign up to be a genius works at SNASA".split("");
+var ad2 = "Go to bar and hook up with chicks".split("");
+var i = 0;
+
+$(document).ready(function(){
+    $('.signupblock').mouseenter(function() {
+        $("#email").show('fast');
+    });
+    $('.signupblock').mouseleave(function() {
+        if ($("#email").val()==""){
+          $("#email").hide('fast');
+        }else{
+          $("#email").show('fast');
+        }
+    });
+    $('.signupblock').mouseenter(function() {
+        $("#email").show('fast');
+    });
+    $(".snasa").fadeIn(1000,"swing",function(){
+        $("#sterminal p").fadeIn(800,"swing");
+
+    });
+    adtrain();
+    $("#sinput").on('keydown', function(event) {
+      if(event.which === 13) {// Enter key pressed 
+        var $this = $(this), 
+        val = $this.val();
+        $this.focus().val('');
+        scrollTo("sinput",100,"sterminal");
+        if(val == "hello world"){
+          addin(val,"sspace");
+          addin("Hello! Sign up now for more functions!","sspace");
+        }else{
+          addin("try hello world","sspace");
+        }
+      }
+    });
+});
+var adcount = 0;
+/**/
+function adtrain(){
+  if(adcount== 0){
+    trmlani("sinput", ad1, 100);
+  }else{
+    trmlani("sinput", ad2, 100);
+  }
+  adcount++;
+}
+/**/
+function trmlani(id, line, time){
+  $("#"+id).focus();
+  var inputbox = document.getElementById(id);
+  setTimeout(function () {
+    inputbox.value = inputbox.value + line[i];
+    i++;
+    if (i < line.length){       
+        trmlani(id, line, time);
+    }else{
+        i=0;
+        addin(inputbox.value,"sspace")
+        inputbox.value="";
+    };
+  }, time);
+}
+/**/
+function addin(text,id){
+  var comtext = "$ " + text
+  var t = document.createElement('p')
+  t.textContent = comtext;
+  var space = document.getElementById(id);
+  space.appendChild(t);
+  if(adcount<2){
+    adtrain();
+  }
+}
+/**/
+function scrollTo(id,shift,scrollitemid){
+    var topPos = document.getElementById(id).offsetTop;
+    document.getElementById(scrollitemid).scrollTop = topPos-shift;
+}
+
+</script>
+<div class ="singuppage">
+  <div class ="contain" style="background-image: url(assets/cosmos.jpg)">
+    <div class="header">
+      <div class="row">
+        <div class="col-xs-3">
+          <img src="assets/snasa.png" id="snasaimg"/>
+        </div>
+        <div class="col-xs-9">
+          <ul class="navpill">
+            <li ><a href="#">Tutorial</a></li>
+            <li><a href="#">About</a></li>
+            <li id="signinbtn"><a href="#">Sign In</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="content">
+        <h1 style="display:none;" class ="snasa">一個虛擬的網頁終端機</h1>
+        <h1 style="display:none;" class ="snasa">讓你隨時隨地假裝高知識份子把妹</h1>
+        <div id="sterminal">
+          <p style="display:none;">$ Welcome to ground control center: </p>
+          <p style="display:none;">$ SNASA offers you a <b>virtual web terminal</b>.</p>
+          <div id="sspace"></div>
+          <p style="display:none;">$ <input type="text" id= "sinput" autocomplete= "off" spellcheck="false"></p>
+          <br><br>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class ="container">
-    <div class ="instruction" style = "background:black">
-      <h1 style ="color :white; border-bottom: 2px solid white; padding-top:25px;">Follow the Instruction of Landing</h1>
 
-      <table style="width:100%;">
-        <tr>
-          <td style="width:20%"><img id="laststep" src="http://i.imgur.com/FZfE6vQ.png?1"
-            style="height:100px;cursor: pointer; cursor: hand;"></td>
-          <td style="width:60%"><img id="instructionimg" src="http://i.imgur.com/APbKoyk.jpg?1" /></td>
-          <td style="width:20%"><img id="nextstep" src="http://i.imgur.com/Zz08Xfa.png?1"
-            style="height:100px;cursor: pointer; cursor: hand;"></td>
-        </tr>
-      </table>
-      <div class ="instructionflow" id ="flowarea">
-        <img class="instructionsimg" src="http://i.imgur.com/APbKoyk.jpg?1" id="1" />
-        <img class="instructionsimg" src="http://i.imgur.com/Fkkxl5v.jpg?1" id="2" />
-        <img class="instructionsimg" src="http://i.imgur.com/WupzZz8.jpg?1" id="3" />
-        <img class="instructionsimg" src="http://i.imgur.com/5osyY9x.png?1" id="4" />
+    <div class="singup_container">
+      <div class="signupblock">
+          <span>
+            <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= devise_error_messages! %>
+
+            <div><%= f.email_field :email, class: "signup_field",placeholder: "Email address", id: "email" %></div>
+
+            <div><% if @validatable %><% end %>
+              <%= f.password_field :password, autocomplete: "off" , value: "00000000" , type: "hidden"%></div>
+
+            <div><%= f.password_field :password_confirmation, autocomplete: "off", value: "00000000", type: "hidden"%></div>
+          </span>
+
+            <div><%= f.submit "Join SNASA" ,id: "signup_btn"%></div>
+            <% end %>
+      </div>
+    </div>
+    <div class ="gradient"></div>
+  </div>
+  <!--<div class ="contain" style="background-color:black;">
+    <div class="tuitor">
+      <p>Tuitorial</p>
+    </div>
+    <div class ="gradient2"></div>
+  </div>
+  <div class ="contain">
+    <div class="about">
+      <p>about</p>
+    </div>
+  </div>-->
+  <div class="foot1">
+    <div class="row">
+      <div class="col-xs-4">
+        <p style="text-align:left;padding-left:20px;">SNASA 칸 &reg;</p>
+      </div>
+      <div class="col-xs-4">
+        <p style="text-align:center;">contact me: khan.whlee@gmail.com</p>
+      </div>
+      <div class="col-xs-4">
+        <p id="sms" style="text-align:right;padding-right:20px;">愛心。服務。責任。紀律。</p>
       </div>
     </div>
   </div>
-  <div class ="container">
-      <h1>Be an astronaut right now</h1>
-        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-          <%= devise_error_messages! %>
-
-          <div><%= f.label :email %><br />
-          <%= f.email_field :email, class: "signup_field" %></div>
-
-          <div><%= f.label :password %> <% if @validatable %><i>(<%= @minimum_password_length %> characters minimum)</i><% end %><br />
-            <%= f.password_field :password, autocomplete: "off" , class: "signup_field" %></div>
-
-          <div><%= f.label :password_confirmation %><br />
-            <%= f.password_field :password_confirmation, autocomplete: "off" , class: "signup_field" %></div>
-
-          <div><%= f.submit "Join SNASA" ,id: "signup_btn"%></div>
-        <% end %>
-        <p>(I have account)</p>
-        <%= link_to "Log In",  authenticated_root_path ,id: "login_btn"%>
-    <!--<%= render "devise/shared/links" %>  I close this due to personal requirement-->
-  </div>
-  <div class="container">
-    <div class="foot">
-      <table style="width: 100%;">
-        <tr>
-          <td style="font-size:20px; text-align:left; padding-left:15px;">SNASA 칸 &reg;</td>
-          <td style="">
-            <ul class ="information" style ="list-style:none; font-size:20px;">
-              <li>connect me:</li>
-              <li>khan.whlee@gmail.com</li>
-            </ul>
-          </td>
-          <td style="text-align:right; font-size:20px; padding-right:15px;">愛心。服務。<br>責任。紀律。</td>
-        </tr>
-      </table>
+  <div class="foot2">
+    <div class="row">
+      <div class="col-xs-8">
+        <p style="text-align:left;padding-left:20px;">contact me:<br> khan.whlee@gmail.com</p>
+      </div>
+      <div class="col-xs-4">
+        <p style="text-align:right;padding-right:20px;padding-top:20px;">SNASA 칸 &reg;</p>
+      </div>
     </div>
   </div>
 </div>

@@ -1,4 +1,4 @@
-var imgindex = 1;
+/*var imgindex = 1;
 
 $(document).ready(function(){
 
@@ -56,7 +56,7 @@ function setimg(i){
 function move(i){
 	var leftPos = document.getElementById(i.toString()).offsetLeft;
     document.getElementById('flowarea').scrollLeft = leftPos-550;
-}
+}*/
 
 
 
