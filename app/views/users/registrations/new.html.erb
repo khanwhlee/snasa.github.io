@@ -1,8 +1,8 @@
-<script type="text/javascript" src="assets/sign_up.js"></script>
 <script>
 
 var ad1 = "Sign up to be a genius works at SNASA".split("");
 var ad2 = "Go to bar and hook up with chicks".split("");
+var adcount = 0;
 var i = 0;
 
 $(document).ready(function(){
@@ -20,8 +20,7 @@ $(document).ready(function(){
         $("#email").show('fast');
     });
     $(".snasa").fadeIn(1000,"swing",function(){
-        $("#sterminal p").fadeIn(800,"swing");
-
+        $("#sterminal").fadeIn(800,"swing");
     });
     adtrain();
     $("#sinput").on('keydown', function(event) {
@@ -29,27 +28,27 @@ $(document).ready(function(){
         var $this = $(this), 
         val = $this.val();
         $this.focus().val('');
-        scrollTo("sinput",100,"sterminal");
-        if(val == "hello world"){
+        if(val == "hello world"||val == "Hello world"){
           addin(val,"sspace");
           addin("Hello! Sign up now for more functions!","sspace");
+          scrollTo("sinput","sterminal",300);
         }else{
           addin("try hello world","sspace");
+          scrollTo("sinput","sterminal",300);
         }
       }
     });
 });
-var adcount = 0;
-/**/
+
 function adtrain(){
   if(adcount== 0){
     trmlani("sinput", ad1, 100);
   }else{
-    trmlani("sinput", ad2, 100);
+    trmlani("sinput", ad2, 70);
   }
   adcount++;
 }
-/**/
+
 function trmlani(id, line, time){
   $("#"+id).focus();
   var inputbox = document.getElementById(id);
@@ -65,7 +64,6 @@ function trmlani(id, line, time){
     };
   }, time);
 }
-/**/
 function addin(text,id){
   var comtext = "$ " + text
   var t = document.createElement('p')
@@ -76,37 +74,45 @@ function addin(text,id){
     adtrain();
   }
 }
-/**/
-function scrollTo(id,shift,scrollitemid){
-    var topPos = document.getElementById(id).offsetTop;
-    document.getElementById(scrollitemid).scrollTop = topPos-shift;
-}
 
 </script>
 <div class ="singuppage">
   <div class ="contain" style="background-image: url(assets/cosmos.jpg)">
     <div class="header">
-      <div class="row">
-        <div class="col-xs-3">
-          <img src="assets/snasa.png" id="snasaimg"/>
+      <div class="header1">
+        <div class="row">
+          <div class="col-xs-3">
+            <img src="assets/snasa.png" id="snasaimg"/>
+          </div>
+          <div class="col-xs-9">
+            <ul class="navpill">
+              <li ><a href="#">Tutorial</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="/fyeo"  id="signinbtn">Sign In</a></li>
+            </ul>
+          </div>
         </div>
-        <div class="col-xs-9">
-          <ul class="navpill">
-            <li ><a href="#">Tutorial</a></li>
-            <li><a href="#">About</a></li>
-            <li id="signinbtn"><a href="#">Sign In</a></li>
-          </ul>
+      </div>
+      <div class="header2">
+        <div class="row">
+          <div class="col-xs-9">
+            <img src="assets/snasa.png" id="snasaimg"/>
+          </div>
+          <div class="col-xs-1"></div>
+          <div class="col-xs-2">
+            <a href="/fyeo"><img src="assets/logo2.png" id="signinimg"/></a>
+          </div>
         </div>
       </div>
       <div class="content">
         <h1 style="display:none;" class ="snasa">一個虛擬的網頁終端機</h1>
         <h1 style="display:none;" class ="snasa">讓你隨時隨地假裝高知識份子把妹</h1>
-        <div id="sterminal">
-          <p style="display:none;">$ Welcome to ground control center: </p>
-          <p style="display:none;">$ SNASA offers you a <b>virtual web terminal</b>.</p>
+        <div id="sterminal" style="display:none;">
+          <p>$ Welcome to ground control center: </p>
+          <p>$ SNASA offers you a <b>virtual web terminal</b>.</p>
           <div id="sspace"></div>
-          <p style="display:none;">$ <input type="text" id= "sinput" autocomplete= "off" spellcheck="false"></p>
-          <br><br>
+          <p>$ <input type="text" id= "sinput" autocomplete= "off" spellcheck="false"></p>
+          <br>
         </div>
       </div>
     </div>

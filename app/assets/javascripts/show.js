@@ -2,105 +2,132 @@
 var line1 = "Waiting for authorization from host 104.223.112.1......................".split("");
 var line2 = "Success!      ".split("");
 var line3 = "Loading spacecraft location.........................".split("");
-var line4 = "SiJak!   ".split("");
-
+var line4 = "Start to locate current coordinate!   ".split("");
+var width = $(window).width();
+var height = $(window).height();
+var ratio = height/width;
 
 $(document).ready(function(){
 	$("#o2").hide(); //test
-	$(".footer , .container3 , .container4").hide();
-	$(".terminal #i1").focus();
-    $(".terminal #i1").on('keydown', function(event) {
+	$(".terminal #input").focus();
+    $(".terminal input, #inputarea").on('keydown', function(event) {
         if(event.which === 13) {// Enter key pressed
             var usertarget = document.getElementById('target').innerHTML;
             var $this = $(this), 
-                val = $this.val();
+            val = $this.val();
             $this.focus().val('');
-            scrollTo();
-            if(val == "hello world"){
+            if(val == "hello world"||val == "Hello world"){
             	add(val);
             	setTimeout(function() {
-					add("what can I help you?");
+					addcontent("what can I help you?");
 				}, 300);
             }
-            else if(val == "whoami"){
+            else if(val == "whoami"||val == "Whoami"){
             	add(val);
             	var username = document.getElementById('username').innerHTML;
             	setTimeout(function() {
-					add("you are "+username);
+					addcontent("you are "+username);
 				}, 300);
             }
-            else if(val == "gc mission"){
+            else if(val == "gc mission"||val == "Gc mission"){
             	add(val);
             	var usermission = document.getElementById('currentmission').innerHTML;
             	setTimeout(function() {
-					add("current mission: "+ usermission);
+					addcontent("current mission: "+ usermission);
 				}, 300);
             }
-            else if(val == "gc schedule"){
+            else if(val == "gc schedule"||val == "Gc schedule"){
             	add(val);
             	var schedule = document.getElementById('schedule').innerHTML;
                 var schedulearray = schedule.split("-");
             	for(k=0 ; k<schedulearray.length;k++){
-                    add(schedulearray[k]);
+                    addcontent(schedulearray[k]);
                 }
             }
-            else if(val == "gc location"){
+            else if(val == "gc i love you"||val == "Gc i love you"){
+                add(val);
+                setTimeout(function() {
+                    addcontent("thank you ♡");
+                }, 300);
+            }
+            else if(val == "gc location"||val == "Gc location"){
                 add(val);
                 track();
                 //addtext(line1,200);
             }
-            else if(val == "gc i love you"){
+            else if(val == "gc route"||val == "Gc route"){
                 add(val);
+                if(ratio>1.2){
+                    $("#scrollimg").fadeIn(2000,"swing",function(){
+                        $("#scrollimg").fadeOut(500,"swing");
+                    })
+                }
                 setTimeout(function() {
-                    add("♡");
-                }, 300);
-            }else if(val == "gc "+usertarget){
+                    $("#p1img").fadeIn(800,"swing",function(){
+                        setTimeout(function() {
+                            $("#p1img").fadeOut(800,"swing");
+                        },10000);
+                    });
+                }, 1000);
+            }
+            else if(val == "gc "+usertarget||val == "Gc "+usertarget){
                 add(val);
                 heart();
             }
-            else if(val == "show code"){
-                add(val);
-                $(".container4").show();
-            }
-            else if(val == "hide code"){
-                add(val);
-                $(".container4").hide();
-            }
-            else if(val == "show help"){
+            else if(val == "help"||val == "Help"){
             	add(val);
-            	$(".container3").show();
+            	$("#instruction").fadeIn(800,"swing");
+                if(ratio>1.2){
+                    $("#scrollimg").fadeIn(2000,"swing",function(){
+                        $("#scrollimg").fadeOut(500,"swing");
+                    })
+                }
             }
-            else if(val == "hide help"){
+            else if(val == "hide help"||val == "Hide help"){
                 add(val);
-                $(".container3").hide();
+                $("#instruction").hide();
             }
-            else if(val == "hide setting"){
+            else if(val == "hide setting"||val == "Hide setting"){
             	add(val);
-            	$(".footer").hide();
+            	$(".header").hide();
             }
-            else if(val == "show setting"){
+            else if(val == "show setting"||val == "Show setting"){
             	add(val);
-            	$(".footer").show();
+            	$(".header").show();
             }
-            else if(val == "clear"){
+            else if(val == "clear"||val == "Clear"){
                 $("#space p").remove();
             }
-            /*else{
-				add(val);
-            	var line = "Error: Command <"+val+"> not recognized...";
-            	setTimeout(function() {
-            		add(val);
-					add(line);
-				}, 300);
-            } unknown bug*/
-
         }
     });
+    /*$("#inputarea").change(function(){
+        $("#inputc, inputm").val($(this).val());
+    });好像不需要*/
+    /*$("#inputarea").focus(function(){
+        $(".terminal_container").css("height","300px")
+    });全失敗 再想想怎麼改
+    
+    if($("#inputarea").is(":focus")){
+        alert("focus!");
+        $(".terminal_container").css("height","300px")
+    }*/
+    /*$(window).resize(function(){
+        alert("resized");
+        if($(window).width() + $(window).height() != width+height){
+          alert("keyboard show up");
+          //$(".copyright_link").css("position","relative");  
+        }else{
+          alert("keyboard closed");
+          //$(".copyright_link").css("position","fixed");  
+        }
+      });*/
+    
+    panelani("panel5","red");
 });
 
 var count = 0;
 function track(){
-    var randomline = grdline();
+    updateScroll();
     if(count==0){
         addtext(line1,150);
     }else if(count==1){
@@ -108,15 +135,17 @@ function track(){
     }else if(count==2){
         addtext(line3,100);
     }else if(count==3){
-        addtext(line4,200);
+        addtext(line4,100);
     }else if(count>3 && count<13){
-        addtext(randomline,100);
+        var randomline = grdline();
+        addtext(randomline,180);
     }
     count++;
 }
 
 var h = 0;
 function heart(){
+    updateScroll();
     if(h==0){
         addtext(heart1,50);
     }else if(h==1){
@@ -138,18 +167,22 @@ function heart(){
 }
 
 var i = 0;
-function addtext(line, interval){
+function addtext(line, interval){ //dynamic 
 
-    var inputbox = document.getElementById('i1');
+    var inputboxc = document.getElementById('input')
+    var inputboxm = document.getElementById('inputmi')
     setTimeout(function () {   
-        inputbox.value = inputbox.value + line[i];
+        inputboxc.value = inputboxc.value + line[i];
+        inputboxm.value = inputboxm.value + line[i];
         i++;
         if (i < line.length){       
             addtext(line,interval);
         }else{
             i=0;
-            add(inputbox.value);
-            inputbox.value="";
+            add(inputboxc.value);
+            updateScroll();
+            inputboxc.value="";
+            inputboxm.value="";
             if(count>0 && count<13){
                 track();
             }else if(h>0 && h<8){
@@ -162,26 +195,20 @@ function addtext(line, interval){
     }, interval);
 }
 
-function grdline(){
-    var rdline =[];
-    for(j = 0; j < 5; j++){
-        var rdnum = Math.random()*10000
-        var rdstr = rdnum.toString() + " ; "
-        rdline.push(rdstr);
-    }
-    return rdline;
+function add(text){ //static command
+    var t = document.createElement('p')
+    t.textContent = "$ "+text;
+    var space = document.getElementById("space");
+    space.appendChild(t);
 }
+function addcontent(text){ //static response
+    var t = document.createElement('p')
+    t.textContent = text;
+    var space = document.getElementById("space");
+    space.appendChild(t);
+    updateScroll();
 
-
-function add(text){
-	var line = "SNASA:RDGC$ " + text
-	var t = document.createElement('p')
-	t.textContent = line;
-	var space = document.getElementById("space");
-	space.appendChild(t);
 }
-
-//textbox 下面要加一點<br>才有空間往上滾
 
 var heart1 ="............◢▇▇◣............◢▇▇◣".split("");
 var heart2 ="......◢▇▇▇▇▇◣◢▇▇▇▇▇◣".split("");
@@ -192,3 +219,26 @@ var heart6 ="............◥▇▇▇▇▇▇▇▇▇◤".split("");
 var heart7 ="..................◥▇▇▇▇▇◤".split("");
 var heart8 ="........................◥▇▇◤".split("");
 
+function grdline(){
+    var rdline =[];
+    for(j = 0; j < 5; j++){
+        var rdnum = (Math.round(Math.random()*10000000))/1000
+        var rdstr = rdnum.toString() + " ; "
+        rdline.push(rdstr);
+    }
+    return rdline;
+}
+function panelani(id,color){
+    var p = document.getElementById(id)
+    var r = Math.random()*100
+    var n = r%25;
+    $("#"+id).css({'color': color});
+    //var a = new Array(n);
+
+    //p.innerHTML = "▊▊▊▊▊▊";
+}
+
+function updateScroll(){
+    var element = document.getElementById("t");
+    element.scrollTop = element.scrollHeight;
+}

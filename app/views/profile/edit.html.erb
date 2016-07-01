@@ -5,11 +5,11 @@
   <div class ="container">
     <%= form_for(resource, as: resource_name, :url => { :controller => "profile" , :action => "update", :id => @user }, html: { method: :put }) do |f| %>
       <div class="field">
-        <%= f.label :username %><br />
+        <%= f.label :username %><i> (whoami)</i><br />
         <%= f.text_field :username, autofocus: true , class: "edit_field", :value => @username, spellcheck: "false" %>
       </div>
       <div class="field"> 
-        <%= f.label :current_mission%><br />
+        <%= f.label :current_mission%><i> (gc mission)</i><br />
         <% if @usermission == "" %>
           <%= f.text_field :mission, class: "edit_field", :value => "Juno - location : JUP", spellcheck: "false" %>
         <% else %>
@@ -17,7 +17,7 @@
         <% end %>
       </div>
       <div class="field">
-        <%= f.label :mission_schedule %><br />
+        <%= f.label :schedule %><i> (gc schedule)<br> <h3>you can seperate text by "-"</h3></i>
         <% if @userschedule == "" %>
         <%= f.text_area :schedule, class: "edit_area" , :value => 
           " Launch @ August 5, 2011
@@ -31,7 +31,7 @@
         <% end %>
       </div>
       <div class="field">
-        <%= f.label :target_name %><br />
+        <%= f.label :target_name %><i> (gc hot girl)<br><h3>you may want to change it to a specific name</h3></i>
         <% if @usertarget == "" %>
           <%= f.text_field :target, class: "edit_field" ,:value => "Enter your target's name", spellcheck: "false" %>
         <% else %>
@@ -43,6 +43,7 @@
       </div>
       <br>
       <%= link_to "Back", authenticated_root_path , id: "back_btn"  %>
+      <p><font color="#ff2845">New customized command is on the way here.</font></p>
     <% end %> 
   </div>
 </div>

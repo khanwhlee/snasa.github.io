@@ -14,6 +14,14 @@
 		a:hover{
 			text-decoration: none;
 		}
+		@media screen and (max-aspect-ratio: 6/5){
+			h1{
+				font-size: 100px;
+			}
+			p{
+				font-size: 50px;
+			}
+		}
 
 	</style>
 	<% if user_signed_in? %>
@@ -21,7 +29,7 @@
 	<div style="text-align:center; padding:15px;">
 			<h1>502 </h1><h1><%= link_to 'Bad', login_session_path %></h1><h1> Gateway</h1>
 	</div>
-	<div style="text-align:center; border-top: 1px solid #222; padding-top:30px;font-family: Times;">
+	<div style="text-align:center; border-top: 1px solid #222; padding-top:20px;font-family: Times;font-weight: bold;">
 		<p>nginx/1.40.11.2</p>
 	</div>
 </div>

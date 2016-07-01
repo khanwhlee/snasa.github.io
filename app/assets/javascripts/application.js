@@ -16,3 +16,10 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
+function scrollTo(id,scrollitemid,shift){
+    var topPos = document.getElementById(id).offsetTop;
+    document.getElementById(scrollitemid).scrollTop = topPos-shift;
+}
+
+
+/*for sign up page*/

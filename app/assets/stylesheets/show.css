@@ -1,61 +1,132 @@
-.show_main{
-	background-size: 100%;
+.mainpage{
+	background-color:black;
+	background-size: cover;
+	width:100%;
+	height: 720px;
 	font-size:30px;
 	color:white;
-	top:0;
-	margin:0px -10px -40px -10px;
-}
- /* Head */
-.show_main .showhead{
-	background-color: black;
-	position:fixed;
-	top:0;
-	left: 0;
-	right: 0;
-  	z-index: 3;
-  	width: 100%;
-}
-
-.show_main .headblocker{
-	background-color: transparent;
-	position:fixed;
-	top:0;
-	left: 0;
-	right: 0;
-  	z-index: 10000;
-  	width: 100%;
-  	height: 100px;
-}
-
-.show_main .tablenav{
-	width: 100%;
-	margin: -20px 0px -20px 0px;
-}
-
-#clock{
-	padding-left: 30px;
-}
-
-.show_main .information{
-	padding-right: 20px;
 	margin:0px;
-	font-size: 15px;
-	float:right;
+	overflow-x:hidden;
 }
+.mainpage p{
+	font-size: 15px;
+	color: #02f902;
+	font-weight: bold;
+}
+/* Head */
+
+.mainpage .header{
+	background-color: black;
+	display: none;
+}
+.mainpage .header ul{
+	text-align:right;
+	padding-right:20px; 
+}
+.mainpage .header li{
+	display: inline-block;
+	border-radius: 3px;
+	padding:5px;
+	margin:5px;
+}
+.mainpage .header li:hover{
+	background: #bbb;
+	color:black;
+}
+
+.mainpage .header .tnav{
+	display: inline-block;
+	height: 40px;
+	vertical-align: middle;
+}
+.mainpage a{
+	color:white;
+}
+.mainpage a:hover{
+	text-decoration: none;
+	color:white;
+}
+.main_container{
+	width:90%;
+	margin:auto;
+}
+/*time*/
+.mobhead{
+	display: none;
+}
+
+/*data*/
+.information_container{
+	height:400px;
+	margin-bottom: 20px;
+	padding:10px;
+	border-radius: 3px;
+	border: 2px solid rgba(99%,99%,99%,0.5);
+	width:100%;
+	position:relative;
+}
+#instruction{
+	display:none;
+	background-color:rgba(10%,10%,10%,0.5);
+	text-align:left;
+	padding-left:10px;
+	position:absolute;
+	top:150;
+	left:50;
+	width: 50%;
+	height: 100%;
+	z-index: 10000;
+	border:2px solid rgba(99%,99%,99%,1);
+}
+#instruction p{
+	color: white;
+	font-weight:normal;
+	font-size: 17px;
+}
+.information_container .panel{
+	text-align: center;
+	background: transparent;
+	height: 100%;
+	width: 100%;
+	border-radius: 0px;
+	border: 2px solid rgba(99%,99%,99%,0.5);
+	margin-left:10px;
+}
+#p1img{
+	display: none;
+	background: url(http://i.imgur.com/nhk5its.gif);
+	background-size: 100% 100%;
+}
+#p2img{
+	background: url(http://geektyper.com/ASSETS/img/hash.gif);
+	background-size: 100% 100%;
+}
+#p3img{
+	background: url(http://geektyper.com/ASSETS/img/downloading.gif);
+	background-size: 100% 100%;
+}
+#p4img{
+	background: url(http://geektyper.com/ASSETS/img/downloading.gif);
+	background-size: 100% 100%;
+}
+#p5img{
+	background: url(denied.png);
+	background-size: 99% 99%;
+}
+
 
 /* Terminal */
-
-.show_main .container1{
-	background-image: url(jupiter.jpg);
-	background-size: 100% auto;
-    width: 100%;
-    height: 800px;
-    padding: 0px 30px 10px 30px;
+.terminal_container{
+	height:300px;
+	padding:10px;
+	border-radius: 3px;
+	border: 2px solid rgba(99%,99%,99%,0.5);
+	width:100%;
 }
 
 .terminal{
 	width: 100%;
-	height: 500px;
+	height:280px;
 	overflow: scroll;
 }
 
@@ -63,105 +134,87 @@
 	outline-style: none;
 	border:none;
 	background-color: transparent;
-	color:inherit;
-	width:80%;
+	color:#02f902;
+	width:95%;
 	font-size: 15px;
 	font-weight: bold;
 	font-family: inherit;
 	line-height: inherit;
 }
-
-.show_main p{
-	font-size: 15px;
-	font-family: Times;
-	color: #02f902;
+#inputm{
+	display: none;
+}
+#inputarea{
+	width:100%;
+	height:90px;
+	outline-style: none;
+	border:1px solid white;
+	font-size: 50px;
 	font-weight: bold;
-
-}
-
-/*暫時不開啟*/
-#msgbox{
-	width: 100%;
-	height: 460px;
-	overflow: scroll;
-	border: 3px solid rgba(1%,98%,1%,0.5);
-	border-radius: 5px;
-	display:none;
-}
-
-#trademark {
-	font-size: 20px;
-	text-align: right;
-	margin: 0px;
-}
-
-/*personal information*/
-
-.show_main .container2{
-	background: white;
-	background-size: 100% auto;
-    width: 100%;
-    height: 400px;
-    font-size: 20px;
-    color: black;
-    display:none;
-}
-
-/*instruction block*/
-.show_main .container2{
-    width: 100%;
-}
-.show_main .instruction{
-	margin:auto;
-	text-align: center;
-}
-
-.show_main #instructionimg{
-	border: 5px solid white;
-	border-radius: 20px;
-	width:95%;
-}
-
-.show_main .instructionflow{
-	width:80%;
-	margin:auto;
-	padding:30px;
-	overflow: scroll;
-	overflow-x: auto;
-	overflow-y: hidden;
-	white-space:nowrap; /*this place all the slide view code*/
-}
-
-.show_main .instructionsimg{
-	display: inline-block;
-	border: 5px solid white;
-	border-radius: 5px;
-	padding: 3px;
-	height:120px;
-	cursor: pointer;
-	cursor: hand;
-}
-
-.show_main .footer{
-	background-color: black;
-	text-align:right;
-}
-
-.nav{
-	text-decoration: none;
-	color:white;
-	width: 300px;
-	border-radius: 3px;
-	border:3px solid white;
-	margin: 10px;
-	display: inline-block;
-	text-align: center;
-}
-
-.nav:hover{
 	color:black;
-	background-color: white;
+	display: none;
 }
+#inputarea:focus{
+	border:3px solid rgb(1%,98%,1%);
+}
+
+
+
+@media screen and (max-aspect-ratio: 5/6){
+	.mainpage{
+		height: 100%;
+	}
+	.mainpage p{
+		font-size: 35px;
+		color: #02f902;
+		font-weight: bold;
+	}
+	.main_container{
+		width:100%;
+	}
+	.comhead{
+		display: none;
+	}
+	.mobhead{
+		display: block;
+	}
+	#instruction{
+		width:98%;
+	}
+	#instructione{
+		display: none;
+	}
+	#instruction p{
+		color: white;
+		font-weight:normal;
+		font-size: 40px;
+	}
+	.terminal input{
+		font-size: 35px;
+	}
+	.information_container{
+		height:600px;
+	}
+	.terminal{
+		height:90%;
+	}
+	.terminal_container{
+		height: 700px;
+	}
+	#inputm{
+		display: block;
+	}
+	#inputc{
+		display: none;
+	}
+	::-webkit-input-placeholder {
+		font-size: 50px;
+	}
+	#inputarea{
+		display:block;
+	}
+}
+
 
 
 

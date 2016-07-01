@@ -1,7 +1,7 @@
 <script>
 
 $(document).ready(function(){
-    $('.dot , .field, #login').hide();
+    
     $('.key').fadeTo('fast', 0.5);
 
     $('.key').mouseenter(function() {
@@ -30,7 +30,7 @@ function input(e) {
     }
     else if(idInput.value.length ==2){
         idInput.value = idInput.value + e.value;
-        $('.field , #login').fadeIn('slow');
+        $('.pwfield , .actions').fadeIn('slow');
         //else 自動回到 502 bad
     }
     else if(idInput.value.length > 2){
@@ -54,9 +54,9 @@ function input(e) {
       <div class="keyboard">
         <table>
           <tr id="table1"; >
-            <td><div class="dot"; id="first"; ></div></td>
-            <td><div class="dot"; id="second"; ></div></td>
-            <td><div class="dot"; id="third"; ></div></td>
+            <td><div class="dot" id="first" style="display:none;"></div></td>
+            <td><div class="dot" id="second" style="display:none;"></div></td>
+            <td><div class="dot" id="third" style="display:none;"></div></td>
           </tr>
             <td><div class="line"></div></td>
             <td><div class="line"></div></td>
@@ -86,11 +86,11 @@ function input(e) {
         </table>
       </div>
 
-      <div class="field">
-        <%= f.password_field :password , autocomplete: "off", class: "password", id: "pwInput" %>
+      <div class="pwfield" style="display:none;">
+        <%= f.password_field :password , autocomplete: "off", id: "pwInput"%>
       </div>
 
-      <div class="actions">
+      <div class="actions" style="display:none;">
         <input value= "S" style = "none" type="submit" id="login"/>
       </div>
     <% end %>

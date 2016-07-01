@@ -1,6 +1,5 @@
 .signin_main{
-	margin:-40px -20px 0px -20px;
-	padding:0px;
+	margin:0px;
 	height:800px;
 	background-color: #000;
 	text-align: center;
@@ -8,7 +7,6 @@
 .signin_main .container{
 	margin:auto;
 }
-
 .signin_main table{
 	margin:auto;
 	text-align: center;
@@ -19,15 +17,16 @@
 	margin-top: 50px;
 }
 
-.signin_main .password{
+.signin_main #pwInput{
 	background-color: transparent;
 	width:100px;
-	height:20px;
+	height:30px;
 	border:2px solid rgba(100%, 100%, 100%, 0.8);
 	border-radius: 10px;
 	margin-top: 40px;
 	color:white;
 	text-align: center;
+	outline: none;
 }
 
 .dot{
@@ -48,6 +47,7 @@
 	text-align: center;
 	color:white;
 	font-size: 15px;
+	outline: none;
 }
 
 .line{
@@ -67,6 +67,7 @@
 	color:white;
 	font-size: 20px;
 	font-style: bold;
+	outline: none;
 }
 
 #login:hover{
@@ -74,3 +75,35 @@
 	border:1.5px solid rgba(0%, 95%, 0%, 0.8);
 }
 
+@media screen and (max-aspect-ratio: 5/6){
+	.signin_main{
+		width: 100%;
+		height: 1700px;
+	}
+	.dot{
+		height:30px;
+		width:30px;
+	}
+	.key{
+		height:180px;
+		width:180px;
+		font-size: 70px;
+		font-weight: bold;
+		margin: 30px;
+	}
+	.line{
+		height:100px;
+	}
+	.signin_main #pwInput{
+		width:80%;
+		height:100px;
+		font-size: 50px;
+		margin: 30px;
+		border-radius: 30px;
+	}
+	#login{
+		height:180px;
+		width:180px;
+		font-size: 70px;
+	}
+}

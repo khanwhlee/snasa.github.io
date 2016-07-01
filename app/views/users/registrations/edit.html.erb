@@ -11,7 +11,7 @@
 
       <div class="field">
         <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true , class: "edit_field"%>
+        <%= f.email_field :email , class: "edit_field",  disabled: "disabled" %>
       </div>
 
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -19,8 +19,8 @@
       <% end %>
 
       <div class="field">
-        <%= f.label :new_password %> <i>(leave blank if you don't want to change it)</i><br />
-        <%= f.password_field :password, autocomplete: "off", class: "edit_field" %>
+        <%= f.label :new_password %> <i><br>(> 8 digit, pure digit recommended)</i><br />
+        <%= f.password_field :password, autofocus: true, autocomplete: "off", class: "edit_field" %>
       </div>
 
       <div class="field">
@@ -29,8 +29,9 @@
       </div>
 
       <div class="field">
-        <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-        <%= f.password_field :current_password, autocomplete: "off", class: "edit_field" %>
+        <%= f.label :current_password %><br />
+        <%= f.password_field :current_password, autocomplete: "off", class: "edit_field",
+        placeholder: "default is : 00000000" %>
       </div>
 
       <div class="actions">

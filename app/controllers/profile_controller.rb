@@ -21,7 +21,7 @@ class ProfileController < ApplicationController
 		@userip = current_user.current_sign_in_ip
 		@userlastip = current_user.last_sign_in_ip
 		@userlastsignint = current_user.last_sign_in_at
-
+		@usersignincount = current_user.sign_in_count
 	end
 
 	def edit

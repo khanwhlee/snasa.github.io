@@ -1,96 +1,129 @@
 <script type="text/javascript" src="assets/show.js"></script>
-<div class="show_main">
-	<nav class="showhead">
-		<table class="tablenav">
-			<tr>
-				<td style="width:27%;"><iframe src="http://free.timeanddate.com/clock/i590km8t/n136/fcfff/tct/pct/ftb/tt0/tw1/tm1/td2/ta1/tb4" frameborder="0" width="125" height="34" allowTransparency="true" id="clock"></iframe></td>
-				<td style="width:46%;"><h2 style="text-align:center;">SNASA <%= @useridstr %> Ground Control</h2></td>
-				<td style="width:27%;">
-					<ul class ="information">
-						<li>Current IP : <%= @userip %></li>
-						<li>Last IP : <%= @userlastip %></li>
-						<li>Last login time : <%= @userlastsignint %></li>
-					</ul>
-				</td>
-			</tr>
-		</table>
-	</nav>
-	<nav class="headblocker"></nav>
-	<table class= "container1">
-		<tr><td></td><td><h2 style ="margin:0px">Secret NASA</h2></td></tr>
-		<tr>
-			<td style="width:70%;">
-				<div class="terminal" id="t">
-					<p> Welcome to ground control center <%= @useridstr %> : </p>
-					<div id="space"></div>
-					<p>SNASA:RDGC$ <input type="text" id= "i1" autocomplete= "off" spellcheck="false"></p>
-					<br><br><br>
-					<p id= "o2">test</p>
+<script>
+
+
+</script>
+<div class="mainpage" id="mainpage">
+	<div class="header">
+		<div class="row">
+	      <div class="col-xs-3">
+	        <img src="assets/snasa.png" id="snasaimg"/>
+	      </div>
+	      <div class="col-xs-9">
+	        <ul>
+	          <li>
+          		<img src="assets/profile.png" class="tnav"/>
+          		<a href="http://www.youtube.com/embed/NBDA21Vc-5Y" class="tnav">Tutorial</a>
+	          </li>
+	          <li>
+          		<img src="assets/profile.png" class="tnav"/>
+          		<%= link_to 'Profile' , edit_profile_path(current_user), class: "tnav" %>
+	          </li>
+	          <li>
+          		<img src="assets/profile.png" class="tnav"/>
+          		<%= link_to 'Account' , edit_user_registration_path, class: "tnav" %>
+	          </li>
+	        </ul>
+	      </div>
+	    </div>
+	</div>
+	<div class="main_container">
+		<div class="comhead">
+			<div class="row">
+				<div class="col-md-6" style="pointer-events: none;">
+					<iframe src="http://free.timeanddate.com/clock/i59gfsyv/n1067/fs18/fc0f0/tc000/ftb/pa8/tt0/tw1/th1/tb2" frameborder="0" width="250" height="30" style="margin-left=-30px;"></iframe>
 				</div>
-			</td>
-			<td style="width:30%;">
-				<div id ="msgbox">
+				<div class="col-md-6" style="text-align:right;">
+					<p><%= @userip %></p>
+
 				</div>
-			</td>
-		</tr>
-		<tr>
-			<td></td>
-			<td><br><br><br><br><h6 id="trademark">SNASA &reg;</h6></td>
-		</tr>
-	</table>
-	<div class= "container2">
-		<div class="main">
+			</div>
+		</div>
+		<div class="mobhead">
+			<div class="row">
+				<div class="col-xs-6" style="pointer-events: none;">
+					<iframe src="http://free.timeanddate.com/clock/i59hebzp/n241/fs36/fc02f902/tc000/ahl/ftb/pa8/tt0/tw1/th1/tb2" frameborder="0" width="602" height="58"></iframe>
+				</div>
+				<div class="col-xs-6" style="text-align:right;">
+					<p><%= @userip %></p>
+				</div>
+			</div>
+		</div>
+		<div class="information_container">
+			<div id="instruction"><!--use absolute from top slide down-->
+					<p id="instructione">
+					This introduction leads you to perfectly use this web app.<br>
+					We have four kinds of commands: (give it a try)<br>
+					-static command:      <font color="#02f902">hello world , show setting, hide setting , help</font><br>
+					-changable command:   <font color="#02f902">whoami , gc mission , gc schedule</font><br>
+					<font color="#ff2845">**the response can be set in profile by yourself.</font><br>
+					-dynamic command:     <font color="#02f902">gc location , gc route</font><br>
+					-desperate command:   <font color="#02f902">gc hot girl , gc i love you</font><br>
+					<font color="#ff2845">**use when you know there is no any chance you can get her.</font><br></p>
+					<p id="instructionc">
+					以下將介紹如何使用這個雲端終端機。<br>
+					我們一共有四種指令：（請試試看）<br>
+					-靜態指令：   <font color="#02f902">hello world , show setting, hide setting , help</font><br>
+					-客製指令：   <font color="#02f902">whoami , gc mission , gc schedule</font><br>
+					-動態指令：   <font color="#02f902">gc location , gc route</font><br>
+					-破釜沈舟：   <font color="#02f902">gc hot girl , gc i love you</font><br>
+					**在知道已經<font color="#ff2845">徹底居掉</font>的時候試試看賣萌<br>
+					"hide help" to continue...<br></p>
+					</div>
+			<div class="row" style="height:100%;">
+				<div class="col-md-6 col-xs-6" style="height:100%">
+					<div class="panel" id="p1img">
+					</div>
+				</div>
+				<div class="col-md-6 col-xs-6" style="height:100%;">
+					<div class="row" style="height:50%;width:100%;">
+						<div class="panel" id="p2img">
+						</div>
+					</div>
+					<div class="row" style="height:17%;width:100%;">
+						<div class="panel" id="p3img">
+						</div>
+					</div>
+					<div class="row" style="height:17%;width:100%;">
+						<div class="panel" id="p4img">
+						</div>
+					</div>
+					<div class="row" style="height:16%;width:100%;">
+						<div class="panel" id="p5img">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="terminal_container">
+			<div id="scrollimg" style="width:100%;display:none;">
+				<img style="width:100%" src="assets/scrollimg.png" />
+			</div>
+			<div class="terminal" id="t">
+				<!--for first time login-->
+				<% if @usersignincount < 2 %>
+					<p class="help">Welcome to ground control centre, your login ID is <%= @useridstr %>. Type "help" in command line for help. (This message is only shown for first time login)</p>
+					<p class="help">您好，您的登入編號為 <font color="#ff2845"><%= @useridstr %></font>。
+						在指令列輸入help已獲取使用教學，此訊息將不再顯示。</p>
+				<% end %>
+				<p>GC_Secure_System_v2.525 for_<%= @useridstr %> : </p>
+				<div id="space" style="width:100%">
+				</div>
+				<p id= "inputc">$ <input type="text" id= "input" autocomplete= "off" spellcheck="false"></p>
+				<p id= "inputm">$ <input type="text" id= "inputmi" autocomplete= "off" spellcheck="false" disabled="disabled"></p>
+				<p id= "o2">test</p>
+			</div>
+		</div>
+	</div>
+	<div class="key_container">
+		<input type="text" id= "inputarea" autocomplete= "off" spellcheck="false" placeholder="Command here">
+	</div>
+	<div class="main" style="display:none;">
 		<ul>
 			<li><h2 id="username"><%= @username %></h2></li>
 			<li><h2 id="currentmission"><%= @usermission %></h2></li>
 			<li><h2 id="schedule"><%= @userschedule %></h2></li>
 			<li><h2 id="target"><%= @usertarget %></h2></li>
 		</ul>
-		</div>
-	</div>
-	<div class ="container3">
-	    <div class ="instruction" style = "background:black">
-	      <table style = "width:100%;">
-	        <tr>
-	          <td style="width:20%"><img id="laststep" src="http://i.imgur.com/FZfE6vQ.png?1"
-	            style="height:100px;cursor: pointer; cursor: hand;"></td>
-	          <td style="width:60%"><img id="instructionimg" src="http://i.imgur.com/eufzQ1S.jpg?1" /></td>
-	          <td style="width:20%"><img id="nextstep" src="http://i.imgur.com/Zz08Xfa.png?1"
-	            style="height:100px;cursor: pointer; cursor: hand;"></td>
-	        </tr>
-	      </table>
-	      <div class ="instructionflow" id ="flowarea">
-	        <img class="instructionsimg" src="http://i.imgur.com/eufzQ1S.jpg?1" id="1" />
-	        <img class="instructionsimg" src="http://i.imgur.com/FigZcLa.jpg?1" id="2" />
-	        <img class="instructionsimg" src="http://i.imgur.com/Guwjc4E.png?1" id="3" />
-	        <!--<img class="instructionsimg" src="http://i.imgur.com/E2gE3S6.png?1" id="4" />-->
-	        <img class="instructionsimg" src="http://i.imgur.com/R7b0QDx.jpg?1" id="4" />
-	        <img class="instructionsimg" src="http://i.imgur.com/KH30yAE.jpg?1" id="5" />
-	        <img class="instructionsimg" src="http://i.imgur.com/7GxMJcW.png?1" id="6" />
-	        <img class="instructionsimg" src="http://i.imgur.com/6rktzzA.png?1" id="7" />
-	        <img class="instructionsimg" src="http://i.imgur.com/pz9dbVl.png?1" id="8" />
-	        <img class="instructionsimg" src="http://i.imgur.com/4sKsn2x.jpg?1" id="9" />
-	        <img class="instructionsimg" src="http://i.imgur.com/bc6WiXJ.jpg?1" id="10" />
-	        <img class="instructionsimg" src="http://i.imgur.com/p0eRmPk.jpg?1" id="11" />
-	        <img class="instructionsimg" src="http://i.imgur.com/mdJXJ6c.png?1" id="12" />
-	      </div>
-	    </div>
-  	</div>
-  	<div class ="container4" style="background-color:white; width:90%; margin-left:30px;">
-  		<p style="color:black;">basic command : hello world<br><br>
-  								configured command : whoami, gc mission, gc schedule<br><br>
-  								system related command :<br>
-  								show setting, hide setting, show help,<br>
-  								hide help, show code, hide code, clear<br>
-  								perfect working command : gc location<br><br>
-  								desperate command :<br>
-  								gc i love you, gc "target name" (without quotation mark)</p>
-  	</div>
-	<div class="footer">
-	<%= link_to 'Profile Setting' , edit_profile_path(current_user) , class: "nav" %>
-
-	<%= link_to 'Account Setting' , edit_user_registration_path  , class: "nav" %>
-
-	<a href="http://khanwhlee.blogspot.tw/" class="nav">About Me</a>
 	</div>
 </div>
