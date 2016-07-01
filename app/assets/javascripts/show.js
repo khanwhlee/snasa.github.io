@@ -57,18 +57,39 @@ $(document).ready(function(){
             }
             else if(val == "gc route"||val == "Gc route"){
                 add(val);
+                $("#p1img2 , #p1img3").hide();
                 if(ratio>1.2){
                     $("#scrollimg").fadeIn(2000,"swing",function(){
                         $("#scrollimg").fadeOut(500,"swing");
                     })
                 }
                 setTimeout(function() {
-                    $("#p1img").fadeIn(800,"swing",function(){
+                    $("#p1img1").fadeIn(800,"swing",function(){
                         setTimeout(function() {
-                            $("#p1img").fadeOut(800,"swing");
+                            $("#p1img1").fadeOut(800,"swing");
                         },10000);
                     });
                 }, 1000);
+            }
+            else if(val == "gc mima"||val == "Gc mima"){
+                $("#p1img1 , #p1img3").hide();
+                add(val);
+                if(ratio>1.2){
+                    $("#scrollimg").fadeIn(2000,"swing",function(){
+                        $("#scrollimg").fadeOut(500,"swing");
+                    })
+                };
+                $("#p1img2").fadeIn(800,"swing");
+            }
+            else if(val == "gc titan"||val == "Gc titan"){
+                add(val);
+                $("#p1img1 , #p1img2").hide();
+                if(ratio>1.2){
+                    $("#scrollimg").fadeIn(2000,"swing",function(){
+                        $("#scrollimg").fadeOut(500,"swing");
+                    })
+                };
+                $("#p1img3").fadeIn(800,"swing");
             }
             else if(val == "gc "+usertarget||val == "Gc "+usertarget){
                 add(val);

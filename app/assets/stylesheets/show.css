@@ -67,7 +67,7 @@
 }
 #instruction{
 	display:none;
-	background-color:rgba(10%,10%,10%,0.5);
+	background-color:rgba(10%,10%,10%,0.9);
 	text-align:left;
 	padding-left:10px;
 	position:absolute;
@@ -76,7 +76,7 @@
 	width: 50%;
 	height: 100%;
 	z-index: 10000;
-	border:2px solid rgba(99%,99%,99%,1);
+	border:2px solid rgb(99%,99%,99%);
 }
 #instruction p{
 	color: white;
@@ -92,9 +92,27 @@
 	border: 2px solid rgba(99%,99%,99%,0.5);
 	margin-left:10px;
 }
-#p1img{
-	display: none;
+#p1img1{
+	height: 100%;
+	width: auto;
+	margin: auto;
 	background: url(http://i.imgur.com/nhk5its.gif);
+	background-size: 100% 100%;
+	display: none;
+}
+#p1img2{
+	height: 100%;
+	width: 80%;
+	margin: auto;
+	background: url(mima.gif);
+	background-size: 100% 100%;
+	display: none;
+}
+#p1img3{
+	height: 100%;
+	width: 80%;
+	margin: auto;
+	background: url(titan.gif);
 	background-size: 100% 100%;
 }
 #p2img{
@@ -212,6 +230,9 @@
 	}
 	#inputarea{
 		display:block;
+	}
+	#p1img2,#p1img3{
+		width:100%;
 	}
 }
 

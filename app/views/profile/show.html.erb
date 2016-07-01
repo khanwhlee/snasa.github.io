@@ -12,15 +12,15 @@
 	      <div class="col-xs-9">
 	        <ul>
 	          <li>
-          		<img src="assets/profile.png" class="tnav"/>
+          		<img src="assets/tutorial.png" class="tnav"/>
           		<a href="http://www.youtube.com/embed/NBDA21Vc-5Y" class="tnav">Tutorial</a>
 	          </li>
 	          <li>
-          		<img src="assets/profile.png" class="tnav"/>
+          		<img src="assets/profile2.png" class="tnav"/>
           		<%= link_to 'Profile' , edit_profile_path(current_user), class: "tnav" %>
 	          </li>
 	          <li>
-          		<img src="assets/profile.png" class="tnav"/>
+          		<img src="assets/account.png" class="tnav"/>
           		<%= link_to 'Account' , edit_user_registration_path, class: "tnav" %>
 	          </li>
 	        </ul>
@@ -51,28 +51,34 @@
 		</div>
 		<div class="information_container">
 			<div id="instruction"><!--use absolute from top slide down-->
-					<p id="instructione">
-					This introduction leads you to perfectly use this web app.<br>
-					We have four kinds of commands: (give it a try)<br>
-					-static command:      <font color="#02f902">hello world , show setting, hide setting , help</font><br>
-					-changable command:   <font color="#02f902">whoami , gc mission , gc schedule</font><br>
-					<font color="#ff2845">**the response can be set in profile by yourself.</font><br>
-					-dynamic command:     <font color="#02f902">gc location , gc route</font><br>
-					-desperate command:   <font color="#02f902">gc hot girl , gc i love you</font><br>
-					<font color="#ff2845">**use when you know there is no any chance you can get her.</font><br></p>
-					<p id="instructionc">
-					以下將介紹如何使用這個雲端終端機。<br>
-					我們一共有四種指令：（請試試看）<br>
-					-靜態指令：   <font color="#02f902">hello world , show setting, hide setting , help</font><br>
-					-客製指令：   <font color="#02f902">whoami , gc mission , gc schedule</font><br>
-					-動態指令：   <font color="#02f902">gc location , gc route</font><br>
-					-破釜沈舟：   <font color="#02f902">gc hot girl , gc i love you</font><br>
-					**在知道已經<font color="#ff2845">徹底居掉</font>的時候試試看賣萌<br>
-					"hide help" to continue...<br></p>
-					</div>
+				<p id="instructione">
+				This introduction leads you to perfectly use this web app.<br>
+				We have four kinds of commands: (give it a try)<br>
+				-static command:      <font color="#02f902">hello world , show setting, hide setting , help</font><br>
+				-changable command:   <font color="#02f902">whoami , gc mission , gc schedule</font><br>
+				<font color="#ff2845">**the response can be set in profile by yourself.</font><br>
+				-dynamic command:     <font color="#02f902">gc location , gc route , gc titan , gc mima</font><br>
+				-desperate command:   <font color="#02f902">gc hot girl , gc i love you</font><br>
+				<font color="#ff2845">**use when you know there is no any chance you can get her.</font><br></p>
+				<p id="instructionc">
+				以下將介紹如何使用這個雲端終端機。<br>
+				我們一共有四種指令：（請試試看）<br>
+				-靜態指令：   <font color="#02f902">hello world , show setting, hide setting , help</font><br>
+				-客製指令：   <font color="#02f902">whoami , gc mission , gc schedule</font><br>
+				-動態指令：   <font color="#02f902">gc location , gc route , gc titan , gc mima</font><br>
+				-破釜沈舟：   <font color="#02f902">gc hot girl , gc i love you</font><br>
+				**在知道已經<font color="#ff2845">徹底居掉</font>的時候試試看賣萌<br>
+				"hide help" to continue...<br></p>
+			</div>
 			<div class="row" style="height:100%;">
 				<div class="col-md-6 col-xs-6" style="height:100%">
-					<div class="panel" id="p1img">
+					<div class="panel">
+						<div id="p1img1">
+						</div>
+						<div id="p1img2">
+						</div>
+						<div id="p1img3">
+						</div>
 					</div>
 				</div>
 				<div class="col-md-6 col-xs-6" style="height:100%;">
@@ -102,11 +108,10 @@
 			<div class="terminal" id="t">
 				<!--for first time login-->
 				<% if @usersignincount < 2 %>
-					<p class="help">Welcome to ground control centre, your login ID is <%= @useridstr %>. Type "help" in command line for help. (This message is only shown for first time login)</p>
-					<p class="help">您好，您的登入編號為 <font color="#ff2845"><%= @useridstr %></font>。
-						在指令列輸入help已獲取使用教學，此訊息將不再顯示。</p>
+					<p class="help">Welcome to ground control centre, <font color="#ff2845">your login ID is <%= @useridstr %> password is 00000000</font>. Type "help" in command line for help. (This message is only shown for first time login)</p>
+					<p class="help">您好，<font color="#ff2845">您的登入編號為 <%= @useridstr %>，密碼為 00000000</font>。在指令列輸入help已獲取使用教學，此訊息將不再顯示。</p>
 				<% end %>
-				<p>GC_Secure_System_v2.525 for_<%= @useridstr %> : </p>
+				<p>GC_Secure_System_v2.525.<%= @usersignincount %> for_<%= @useridstr %> : </p>
 				<div id="space" style="width:100%">
 				</div>
 				<p id= "inputc">$ <input type="text" id= "input" autocomplete= "off" spellcheck="false"></p>
