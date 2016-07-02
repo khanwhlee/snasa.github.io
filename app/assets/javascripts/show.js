@@ -1,8 +1,8 @@
 
 var line1 = "Waiting for authorization from host 104.223.112.1......................".split("");
 var line2 = "Success!      ".split("");
-var line3 = "Loading spacecraft location.........................".split("");
-var line4 = "Start to locate current coordinate!   ".split("");
+var line3 = "Loading coordinate.........................".split("");
+var line4 = "Start to locate telescope position!   ".split("");
 var width = $(window).width();
 var height = $(window).height();
 var ratio = height/width;
@@ -97,6 +97,7 @@ $(document).ready(function(){
             }
             else if(val == "help"||val == "Help"){
             	add(val);
+                updateScroll();
             	$("#instruction").fadeIn(800,"swing");
                 if(ratio>1.2){
                     $("#scrollimg").fadeIn(2000,"swing",function(){
@@ -106,15 +107,23 @@ $(document).ready(function(){
             }
             else if(val == "hide help"||val == "Hide help"){
                 add(val);
+                updateScroll();
                 $("#instruction").hide();
             }
             else if(val == "hide setting"||val == "Hide setting"){
             	add(val);
+                updateScroll();
             	$(".header").hide();
             }
             else if(val == "show setting"||val == "Show setting"){
             	add(val);
+                updateScroll();
             	$(".header").show();
+                if(ratio>1.2){
+                    $("#scrollimg").fadeIn(2000,"swing",function(){
+                        $("#scrollimg").fadeOut(500,"swing");
+                    })
+                };
             }
             else if(val == "clear"||val == "Clear"){
                 $("#space p").remove();

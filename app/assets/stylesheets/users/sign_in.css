@@ -90,6 +90,7 @@
 		font-size: 70px;
 		font-weight: bold;
 		margin: 30px;
+		border:3px solid rgba(95%, 95%, 95%, 0.4);
 	}
 	.line{
 		height:100px;
@@ -100,10 +101,12 @@
 		font-size: 50px;
 		margin: 30px;
 		border-radius: 30px;
+		border:5px solid rgba(100%, 100%, 100%, 0.8);
 	}
 	#login{
 		height:180px;
 		width:180px;
 		font-size: 70px;
+		border:3px solid rgba(95%, 95%, 95%, 0.8);
 	}
 }

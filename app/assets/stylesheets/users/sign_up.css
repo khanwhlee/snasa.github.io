@@ -3,7 +3,7 @@ body{
 }
 .singuppage .contain{
 	margin:0px;
-	width:100%;<%= @userip %>
+	width:100%;
 	background-size: cover;
 	overflow-x:hidden;
 	color: rgb(1%,98%,1%);;
